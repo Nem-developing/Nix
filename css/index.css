@@ -7,3 +7,8 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.card {
+    float: left;
+    margin-top: 20px;
+}
