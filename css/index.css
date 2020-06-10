@@ -1,14 +1,28 @@
 /* 
     Created on : 9 juin 2020, 22:15:25
-    Author     : Nem-developing
+    Author     : Nem-Developing
 */
-
 #serveurs {
-    padding-left: 20px;
     padding-right: 20px;
+    width: 100%!important;
 }
 
+
+/*      */
 .card {
     float: left;
     margin-top: 20px;
+    margin-left: 20px;
+}
+
+.version {
+    color: rgba(255,255,255,.5);
+}
+
+.actions {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+        background-color: black;
+
 }
