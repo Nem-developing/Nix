@@ -2,6 +2,31 @@
     Created on : 9 juin 2020, 22:15:25
     Author     : Nem-Developing
 */
+
+/* Déffinition de la police BebasNeue-Regular */
+@font-face {
+ font-family: "polices/BebasNeue-Regular";
+ src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+/* Déffinition de la police BerkshireSwash-Regular */
+@font-face {
+ font-family: "polices/BerkshireSwash-Regular";
+ src: url("../fonts/BerkshireSwash-Regular.ttf") format("truetype");
+}
+
+/* Déffinition de la police Raleway-Black */
+@font-face {
+ font-family: "polices/Raleway-Black";
+ src: url("../fonts/Raleway-Black.ttf") format("truetype");
+}
+
+/*  Propriétés globales.*/
+* {
+        text-decoration: none;
+}
+
+
 /*  Division de l'affichage des différents serveurs.'*/
 #serveurs {
     padding-right: 20px;
@@ -38,4 +63,20 @@
 /* Bouton "Éteindre" tout à droites des cards. */
 .btn-danger {
     float: right;
+}
+
+
+/*  Affichage text "En ligne"*/
+#online {
+    color: green !important;
+    font-weight: bold;
+    font-family: 'polices/BerkshireSwash-Regular';
+}
+
+
+/*  Affichage text "Hors ligne"*/
+#horsligne {
+    color: red;
+    font-weight: bold;
+    font-family: 'polices/BerkshireSwash-Regular';
 }
