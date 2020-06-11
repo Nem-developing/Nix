@@ -8,7 +8,6 @@
 }
 
 
-/*      */
 .card {
     float: left;
     margin-top: 20px;
@@ -20,9 +19,10 @@
 }
 
 .actions {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 18px;
     padding-left: 20px;
-        background-color: black;
-
+    background-color: #343a40!important;
+    border-top: solid;
+    border-color: green;
 }
