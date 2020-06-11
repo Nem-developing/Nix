@@ -2,22 +2,23 @@
     Created on : 9 juin 2020, 22:15:25
     Author     : Nem-Developing
 */
+/*  Division de l'affichage des différents serveurs.'*/
 #serveurs {
     padding-right: 20px;
     width: 100%!important;
 }
 
-
+/*  Propriétés des différentes cards des serveurs.*/
 .card {
     float: left;
     margin-top: 20px;
     margin-left: 20px;
 }
-
+/*  Propriétés de l'affichage du numéro de version et du nom de l'auteur.'*/
 .version {
     color: rgba(255,255,255,.5);
 }
-
+/*  Propriétés du menu d'actions'*/
 .actions {
     padding-top: 15px;
     padding-bottom: 18px;
@@ -25,4 +26,16 @@
     background-color: #343a40!important;
     border-top: solid;
     border-color: green;
+}
+
+/*  Bouton "supprimer un serveur" tout à droite avec une marge de vingt pixels.*/
+#btndelsrv {
+    float: right;
+    margin-right: 20px !important;
+}
+
+
+/* Bouton "Éteindre" tout à droites des cards. */
+.btn-danger {
+    float: right;
 }
