@@ -1,0 +1,32 @@
+/* 
+    Created on : 13 juin 2020, 22:30
+    Author     : Nem-Developing
+*/
+
+/* Déffinition de la police BebasNeue-Regular */
+@font-face {
+ font-family: "polices/BebasNeue-Regular";
+ src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+}
+
+/* Déffinition de la police BerkshireSwash-Regular */
+@font-face {
+ font-family: "polices/BerkshireSwash-Regular";
+ src: url("../fonts/BerkshireSwash-Regular.ttf") format("truetype");
+}
+
+/* Déffinition de la police Raleway-Black */
+@font-face {
+ font-family: "polices/Raleway-Black";
+ src: url("../fonts/Raleway-Black.ttf") format("truetype");
+}
+
+/*  Propriétés globales.*/
+* {
+        text-decoration: none;
+}
+
+#page {
+    padding-left: 20%;
+    padding-right: 20%;
+}
