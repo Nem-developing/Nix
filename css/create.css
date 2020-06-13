@@ -26,7 +26,28 @@
         text-decoration: none;
 }
 
+/*  classe pour la police d'un texte'*/
+.breakshire{
+        font-family: 'polices/BerkshireSwash-Regular';
+}
+
+
+
+/*  Ajout de marges à la page sauf au menu. */
 #page {
     padding-left: 20%;
     padding-right: 20%;
+}
+
+/*  Paramètres du bouton de création. */
+.boutonenvoie {
+    margin-top: 20px;
+    width: 100%
+}
+
+
+/*  Paramètres du titre. */
+#titrepage{
+        margin-top: 20px;
+        
 }
