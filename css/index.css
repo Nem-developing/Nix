@@ -21,16 +21,20 @@
  src: url("../fonts/Raleway-Black.ttf") format("truetype");
 }
 
-/*  Propriétés globales.*/
+/*  Propriétés globales.    */
 * {
-        text-decoration: none;
+    text-decoration: none;
 }
+html {
+    background-color: black;
+}
+/*  Propriétés globales.    */
 
 
 /*  Division de l'affichage des différents serveurs.'*/
-#serveurs {
-    padding-right: 20px;
-    width: 100%!important;
+.serveurs {
+    text-align: center;
+    display:block;
 }
 
 /*  Propriétés des différentes cards des serveurs.*/
@@ -38,7 +42,16 @@
     float: left;
     margin-top: 20px;
     margin-left: 20px;
+    background-color: lawngreen;
 }
+.list-group-item {
+    background-color: coral;
+}
+/*  Propriétés des différentes cards des serveurs.*/
+
+
+
+
 /*  Propriétés de l'affichage du numéro de version et du nom de l'auteur.'*/
 .version {
     color: rgba(255,255,255,.5);
