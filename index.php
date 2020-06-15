@@ -39,7 +39,7 @@
 
         <div class="actions">
             <a href="pages/create.php">
-            <button type="button" class="btn btn-warning">Créer un nouveau serveur</button>
+                <button type="button" class="btn btn-warning">Créer un nouveau serveur</button>
             </a>
             <button type="button" class="btn btn-danger" id="btndelsrv">Supprimer un serveur</button>
         </div>
@@ -48,19 +48,31 @@
 
         <!-- Liste des serveurs-->
 
-<div class="serveurs center">
-        <?php
-            for ($i=1; $i<10; $i++){
+        <div class="serveurs center">
+            <?php
+            include './config/config.php';  // Import des informations de connexion à la base de données.
+
+            // Établissement de la connexion au serveur mysql.
+            $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
+            // Commande SQL permetant de récupérer la liste des serveurs actifs.
+            $req = 'SELECT * FROM `serveurs` where `actif` = "0";';
+            // Envoie au serveur la commande via le biais des informations de connexion.
+            $res = $cnx->query($req);
+
+            // Boucle tant qu'il y a de lignes corespondantes à la requettes
+            while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+                // Affichage des différents serveurs (Dans des éléments de type card.)
                 echo "
-            <div class='card' style='width: 18rem;'>
+                <div class='card' style='width: 18rem;'>
                 <div class='card-body'>
-                    <h5 class='card-title'>Serveur A</h5>
+                    <h5 class='card-title'>Serveur $ligne->nom</h5>
                     <p class='card-text'>État du serveur : <span id='online'>En ligne</span> / <span id='horsligne'>Hors ligne</span></p>
                 </div>
                 <ul class='list-group list-group-flush'>
                     <li class='list-group-item'>Nombre de joueurs Max : 150</li>
-                    <li class='list-group-item'>Créé le : 03/06/2020</li>
-                    <li class='list-group-item'>ID : $i</li>
+                    <li class='list-group-item'>Créé le : $ligne->datecreation</li>
+                    <li class='list-group-item'>Version : $ligne->version</li>
+                    <li class='list-group-item'>ID : $ligne->id</li>
                 </ul>
                 <div class='card-body'> 
                     <a href='#' class='card-link' id='pencil'><svg class='bi bi-pencil' width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
@@ -68,13 +80,12 @@
                         <path fill-rule='evenodd' d='M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z'/></svg>Modifier le serveur</a><br>
                     <a href='#' class='btn btn-success'>Démarer</a>
                     <a href='#' class='btn btn-danger'>Eteindre</a>
-
                 </div>
-            </div>";
-        }
-        ?>
-</div>
-        
+            </div>";   
+            }
+            ?>
+        </div>
+
 
 
 
