@@ -47,268 +47,35 @@
 
 
         <!-- Liste des serveurs-->
-        <div id="serveurs">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur A</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
+
+<div class="serveurs center">
+        <?php
+            for ($i=1; $i<10; $i++){
+                echo "
+            <div class='card' style='width: 18rem;'>
+                <div class='card-body'>
+                    <h5 class='card-title'>Serveur A</h5>
+                    <p class='card-text'>État du serveur : <span id='online'>En ligne</span> / <span id='horsligne'>Hors ligne</span></p>
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0001</li>
+                <ul class='list-group list-group-flush'>
+                    <li class='list-group-item'>Nombre de joueurs Max : 150</li>
+                    <li class='list-group-item'>Créé le : 03/06/2020</li>
+                    <li class='list-group-item'>ID : $i</li>
                 </ul>
-                <div class="card-body"> 
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
+                <div class='card-body'> 
+                    <a href='#' class='card-link' id='pencil'><svg class='bi bi-pencil' width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
+                        <path fill-rule='evenodd' d='M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z'/>a
+                        <path fill-rule='evenodd' d='M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z'/></svg>Modifier le serveur</a><br>
+                    <a href='#' class='btn btn-success'>Démarer</a>
+                    <a href='#' class='btn btn-danger'>Eteindre</a>
 
                 </div>
+            </div>";
+        }
+        ?>
+</div>
+        
 
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur B</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0002</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur C</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0003</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur D</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0004</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur E</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0005</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur F</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0006</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur G</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0007</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur H</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0008</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur I</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0009</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur J</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0010</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur K</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0011</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Serveur L</h5>
-                    <p class="card-text">État du serveur : <span id="online">En ligne</span> / <span id="horsligne">Hors ligne</span></p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Nombre de joueurs Max : 150</li>
-                    <li class="list-group-item">Créé le : 03/06/2020</li>
-                    <li class="list-group-item">ID : 0012</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link" id="pencil"><svg class="bi bi-pencil" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1 0 1.414l-9 9a1 1 0 0 1-.39.242l-3 1a1 1 0 0 1-1.266-1.265l1-3a1 1 0 0 1 .242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z"/>a
-                        <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 0 0 .5.5H4v.5a.5.5 0 0 0 .5.5H5v.5a.5.5 0 0 0 .5.5H6v-1.5a.5.5 0 0 0-.5-.5H5v-.5a.5.5 0 0 0-.5-.5H3z"/></svg>Modifier le serveur</a><br>
-                    <a href="#" class="btn btn-success">Démarer</a>
-                    <a href="#" class="btn btn-danger">Eteindre</a>
-
-                </div>
-
-            </div>
-        </div>
 
 
 
