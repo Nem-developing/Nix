@@ -58,7 +58,7 @@
             }
             // Création de la table où l'on stoque les informations de créations de serveurs.
             // Nous notons que le champ "Actif" permet de trier les serveur actifs (=0) de ceux qui sont supprimés(=1)
-            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `serveurs` ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `nom` varchar(21) NOT NULL, `version` varchar(7) NOT NULL, `datecreation` varchar(10) NOT NULL, `actif` int(1) NOT NULL );")) {
+            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `serveurs` ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `nom` varchar(20) NOT NULL, `version` varchar(7) NOT NULL, `datecreation` varchar(10) NOT NULL, `actif` int(1) NOT NULL );")) {
                 echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1 ;
