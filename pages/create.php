@@ -45,14 +45,14 @@
             <!-- Formulaire de création d'un nouveau serveur-->
 
 
-            <form >
+            <form action="action.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du nouveau serveur</label>
-                    <input class="form-control form-control-lg" type="text" placeholder="Exemple : Nemixcraft">
+                    <input class="form-control form-control-lg" type="text" name="namesrv" placeholder="Exemple : Nemixcraft">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Version du serveur</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="exampleFormControlSelect1" name="version">
                         <option>1.15.2</option>
                         <option>1.15</option>
                         <option>1.14</option>
@@ -65,7 +65,7 @@
                         <option>1.7.10</option> 
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2 boutonenvoie">Créer le serveur</button>
+                <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Créer le serveur</button>
             </form>
         </div>
     </center>
