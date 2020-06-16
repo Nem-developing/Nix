@@ -57,36 +57,38 @@
                     </tr>
                 </thead>
                 <tbody>
+
+
+
+
+
+                    <?php
+                    include '../config/config.php';  // Import des informations de connexion à la base de données.
+                    // Établissement de la connexion au serveur mysql.
+                    $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
+                    // Commande SQL permetant de récupérer la liste des serveurs actifs.
+                    $req = 'SELECT * FROM `serveurs` where `actif` = "0";';
+                    // Envoie au serveur la commande via le biais des informations de connexion.
+                    $res = $cnx->query($req);
+
+                    // Boucle tant qu'il y a de lignes corespondantes à la requettes
+                    while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+                        // Affichage des différents serveurs (Dans des éléments de type card.)
+                        echo "
+                                <tr>
+                                    <th scope='row'>$ligne->id</th>
+                                    <td>$ligne->nom</td>
+                                    <td>$ligne->version</td>
+                                    <td>$ligne->datecreation</td>
+                                    <td><button type='button' class='btn btn-danger'>Supprimer le serveur</button></td>
+                                </tr>
+                             ";
                     
-                    
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Serveur 1</td>
-                        <td>1.7.10</td>
-                        <td>16/05/2020</td>
-                        <td><button type="button" class="btn btn-danger">Supprimer le serveur</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Serveur 2</td>
-                        <td>1.7.10</td>
-                        <td>16/05/2020</td>
-                        <td><button type="button" class="btn btn-danger">Supprimer le serveur</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Serveur 3</td>
-                        <td>1.7.10</td>
-                        <td>16/05/2020</td>
-                        <td><button type="button" class="btn btn-danger">Supprimer le serveur</button></td>
-                    </tr>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    }
+                    ?>
+
+
+
                 </tbody>
             </table>
 
