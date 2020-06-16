@@ -49,7 +49,7 @@
             }
             ?>
             <?php
-            $id = $_POST['id'];       // On récupère l'identifiant du serveur à créer.
+            (int) $id = $_GET['id'];       // On récupère l'identifiant du serveur à créer.
             (int) $erreur = 0;
             include "../config/config.php"; // Import des données de connexion.
 
