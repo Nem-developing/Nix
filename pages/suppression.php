@@ -51,6 +51,7 @@
             <?php
             $id = $_POST['id'];       // On récupère l'identifiant du serveur à créer.
             (int) $erreur = 0;
+            include "../config/config.php"; // Import des données de connexion.
 
             //  Connexion à la base de donnée.
             $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");
@@ -61,7 +62,7 @@
             }
  
             // On ajoute les informations du formulaire dans la table "serveurs".
-            if (!$mysqli->query("DELETE FROM `serveurs` WHERE ((`id` = '$id'));")) {
+            if (!$mysqli->query("UPDATE `serveurs` SET `actif` = '1' WHERE `id` = '$id';")) {
                 echo "<div class='alert alert-danger' role='alert'> Echec lors de la suppression du serveur ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
