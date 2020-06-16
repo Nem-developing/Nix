@@ -41,7 +41,9 @@
             <a href="pages/nouveau-serveur.php">
                 <button type="button" class="btn btn-warning">Créer un nouveau serveur</button>
             </a>
-            <button type="button" class="btn btn-danger" id="btndelsrv">Supprimer un serveur</button>
+            <a href="pages/suppression-serveur.php">
+                <button type="button" class="btn btn-danger" id="btndelsrv">Supprimer un serveur</button>
+            </a>
         </div>
 
 
