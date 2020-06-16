@@ -39,7 +39,6 @@
         <! -- Titre de la page -->
     <center>
         <div id="page">
-            <p class="h1 breakshire" id="titrepage">Suppression d'un serveur</p>
 
 
             <!-- Tableau avec tout les serveurs. -->
