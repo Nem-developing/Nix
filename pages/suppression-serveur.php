@@ -79,7 +79,9 @@
                                     <td>$ligne->nom</td>
                                     <td>$ligne->version</td>
                                     <td>$ligne->datecreation</td>
+                                    <a href 'suppression.php.id=$ligne->id'>
                                     <td><button type='button' class='btn btn-danger'>Supprimer le serveur</button></td>
+                                    </a>
                                 </tr>
                              ";
                     
