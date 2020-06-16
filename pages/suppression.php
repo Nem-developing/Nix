@@ -47,7 +47,33 @@
                 header('Location: ../index.php');   // redireciton vers la page d'acceuil.
                 exit();
             }
-          
+            ?>
+            <?php
+            $id = $_POST['id'];       // On récupère l'identifiant du serveur à créer.
+            (int) $erreur = 0;
+
+            //  Connexion à la base de donnée.
+            $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");
+            if ($mysqli->connect_errno) {
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de la connexion à MySQL ! </div>";   // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+                $erreur = $erreur + 1;
+            }
+ 
+            // On ajoute les informations du formulaire dans la table "serveurs".
+            if (!$mysqli->query("DELETE FROM `serveurs` WHERE ((`id` = '$id'));")) {
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de la suppression du serveur ! </div>";    // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+                $erreur = $erreur + 1;
+            }
+
+            if ($erreur === 0) {    // test de la présence d'erreurs ou non.
+                echo "pas d'erreurs";
+                header('Location: nouveau-serveur.php');   // Redirection vers la page de suppression.
+                exit();
+            } else {
+                echo "<h1>Il semble y avoir une erreur, veuillez vous référer à l'alerte au dessus !</h1>";
+            }
             ?>
 
             
