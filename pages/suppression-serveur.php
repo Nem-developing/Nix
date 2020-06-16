@@ -70,8 +70,12 @@
                     // Envoie au serveur la commande via le biais des informations de connexion.
                     $res = $cnx->query($req);
 
+                    
                     // Boucle tant qu'il y a de lignes corespondantes à la requettes
                     while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+                        // Variable créé pour l'implémentation correcte du lien.
+                        $id = $ligne->id;
+                        
                         // Affichage des différents serveurs (Dans des éléments de type card.)
                         echo "
                                 <tr>
@@ -79,7 +83,7 @@
                                     <td>$ligne->nom</td>
                                     <td>$ligne->version</td>
                                     <td>$ligne->datecreation</td>
-                                    <a href 'suppression.php.id=$ligne->id'>
+                                    <a href 'suppression.php.id=$id'>
                                     <td><button type='button' class='btn btn-danger'>Supprimer le serveur</button></td>
                                     </a>
                                 </tr>
@@ -94,15 +98,12 @@
             </table>
 
 
-
-
-
-
-
-
         </div>
     </center>
 
+    
+    
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
