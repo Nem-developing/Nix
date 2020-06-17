@@ -78,20 +78,15 @@
                 $erreur = $erreur + 1;
             }
 
-
-
-
-
-
-
             include "../config/config.php"; // Import des données de connexion.
-
-
-            $dernierid = 0;
-
-
-
-            if ("$mysqli->query('SELECT * FROM `serveurs` where `actif` = '0')") {
+            
+            // $dernierid = 0 quand il n'y a aucunes valeurs ; Il sera égale à l'id du dernier champ de la table serveur.
+            (int) $dernierid = 0;
+            
+            
+             if (!$mysqli->query('SELECT * FROM `serveurs` where `actif` = "0";')) {
+                $dernierid = 0;
+            } else {
                 // Établissement de la connexion au serveur mysql.
                 $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
                 // Commande SQL permetant de récupérer la liste des serveurs actifs.
@@ -103,16 +98,9 @@
                 while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
                     (int) $dernierid = $ligne->id;
                 }
-            } else {
-                            $dernierid = 0;
             }
-
-
-
-
-            // $dernierid = 0 quand il n'y a aucunes valeurs ; Il sera égale à l'id du dernier champ de la table serveur.
-            echo "$dernierid";
-
+            
+            
             // Atribution des données.
             $idserveur = $dernierid + 1;    // Identifiant actuel.
 
