@@ -77,9 +77,8 @@
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
-
-            include "../config/config.php"; // Import des données de connexion.
             
+                        
             // $dernierid = 0 quand il n'y a aucunes valeurs ; Il sera égale à l'id du dernier champ de la table serveur.
             (int) $dernierid = 0;
             
