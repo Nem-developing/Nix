@@ -103,7 +103,7 @@
             
             
             // $dernierid = 0 quand il n'y a aucunes valeurs ; Il sera égale à l'id du dernier champ de la table serveur.
-            echo "$dernierid";
+            echo "Last id = $dernierid";
             
             // Atribution des données.
             $idserveur = $dernierid + 1;    // Identifiant actuel.
