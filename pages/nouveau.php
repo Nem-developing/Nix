@@ -98,7 +98,7 @@
 
             // Boucle tant qu'il y a de lignes corespondantes à la requettes
             while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
-                $dernierid = $ligne->id;
+                (int) $dernierid = $ligne->id;
             }
             
             
