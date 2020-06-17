@@ -106,8 +106,7 @@
             echo "Last id = $dernierid";
             
             // Atribution des données.
-            $idserveur = $dernierid + 1;    // Identifiant actuel.
-
+            
             $port = (25565 + $dernierid);   // Port de jeu
             
             $querry = (35565 + $dernierid); // Port JQuerry
