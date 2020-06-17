@@ -59,12 +59,65 @@
             // Création de la table où l'on stoque les informations de créations de serveurs.
             // Nous notons que le champ "Actif" permet de trier les serveur actifs (=0) de ceux qui sont supprimés(=1)
             if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `serveurs` ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `nom` varchar(21) NOT NULL, `version` varchar(7) NOT NULL, `datecreation` varchar(10) NOT NULL, `actif` int(1) NOT NULL );")) {
-                echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table ! </div>";    // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table serveurs ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
+            
             // On ajoute les informations du formulaire dans la table "serveurs".
             if (!$mysqli->query("INSERT INTO `serveurs` (`nom`, `version` , `datecreation`, `actif`) VALUES ('$namesrv', '$version', '$date', '0');")) {
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout de vos données dans de la table ! </div>";    // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+                $erreur = $erreur + 1;
+            }
+            
+            // Création de la table où l'on stoque les informations réseau du serveur (Port ; Jquerry ; Rcon)
+            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `ports` ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `port` varchar(5) NOT NULL, `jquerry` varchar(5) NOT NULL, `rcon` varchar(5) NOT NULL, `rconmdp` varchar(15) NOT NULL);")) {
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table ports ! </div>";    // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+                $erreur = $erreur + 1;
+            }
+            
+            
+            
+            
+            
+            
+            
+            include "../config/config.php"; // Import des données de connexion.
+
+
+            $dernierid = 0;
+            
+            // Établissement de la connexion au serveur mysql.
+            $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
+            // Commande SQL permetant de récupérer la liste des serveurs actifs.
+            $req = 'SELECT * FROM `serveurs` where `actif` = "0";';
+            // Envoie au serveur la commande via le biais des informations de connexion.
+            $res = $cnx->query($req);
+
+            // Boucle tant qu'il y a de lignes corespondantes à la requettes
+            while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+                $dernierid = $ligne->id;
+            }
+            
+            
+            // $dernierid = 0 quand il n'y a aucunes valeurs ; Il sera égale à l'id du dernier champ de la table serveur.
+            echo "$dernierid";
+            
+            // Atribution des données.
+            $idserveur = $dernierid + 1;    // Identifiant actuel.
+
+            $port = (25565 + $dernierid);   // Port de jeu
+            
+            $querry = (35565 + $dernierid); // Port JQuerry
+            
+            $rcon = (45565 + $dernierid);   // Port Rcon 
+            
+            $pass = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'),1, 20); // Génération d'un mot de passe aléatoire.
+            
+            
+            if (!$mysqli->query("INSERT INTO `ports` (`port`, `jquerry`, `rcon`, `rconmdp`) VALUES ('$port', '$querry', '$rcon', '$pass');")) {
                 echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout de vos données dans de la table ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
@@ -78,11 +131,18 @@
                 echo "<h1>Il semble y avoir une erreur, veuillez vous référer à l'alerte au dessus !</h1>";
             }
             ?>
-            
 
-            
+
+
         </div>
     </center>
+
+
+
+
+
+   
+
 
 
 
