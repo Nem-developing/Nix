@@ -99,6 +99,8 @@
                 }
             }
             
+            // Fix bug
+            $dernierid = $dernierid - 1;
             
             // Atribution des données.
             $idserveur = $dernierid + 1;    // Identifiant actuel.
