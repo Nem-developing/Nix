@@ -141,6 +141,52 @@
             
             
             
+
+
+
+            SERVEUR MINECRAFT - SERVEUR MINECRAFT - SERVEUR MINECRAFT - SERVEUR MINECRAFT - SERVEUR MINECRAFT
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+            $liendownload = "";
+
+            // Établissement des liens de téléchargements en fonction de la version du serveur.
+            switch ($version) {
+                case "1.7.10":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar";
+                    break;
+                case "1.8":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/a028f00e678ee5c6aef0e29656dca091b5df11c7/server.jar";
+                    break;
+                case "1.9":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/b4d449cf2918e0f3bd8aa18954b916a4d1880f0d/server.jar";
+                    break;
+                case "1.10":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/a96617ffdf5dabbb718ab11a9a68e50545fc5bee/server.jar";
+                    break;
+                case "1.11":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/48820c84cb1ed502cb5b2fe23b8153d5e4fa61c0/server.jar";
+                    break;
+                case "1.12":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/8494e844e911ea0d63878f64da9dcc21f53a3463/server.jar";
+                    break;
+                case "1.13":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/d0caafb8438ebd206f99930cfaecfa6c9a13dca0/server.jar";
+                    break;
+                case "1.14":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/f1a0073671057f01aa843443fef34330281333ce/server.jar";
+                    break;
+                case "1.15":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/e9f105b3c5c7e85c7b445249a93362a22f62442d/server.jar";
+                    break;
+                case "1.15.2":
+                    $liendownload = "https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar";
+                    break;
+                
+            }
             
             
             
