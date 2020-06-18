@@ -99,12 +99,12 @@
                 }
             }
             
-            // Fix bug
-            $dernierid = $dernierid - 1;
+            
             
             // Atribution des données.
-            $idserveur = $dernierid + 1;    // Identifiant actuel.
 
+            $dernierid = $dernierid - 1;
+            
             $port = (25565 + $dernierid);   // Port de jeu
 
             $querry = (35565 + $dernierid); // Port JQuerry
@@ -113,13 +113,18 @@
 
             $pass = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 1, 20); // Génération d'un mot de passe aléatoire.
 
+            $idserveur = $dernierid + 1;    // Identifiant actuel.
 
+                        
             if (!$mysqli->query("INSERT INTO `ports` (`port`, `jquerry`, `rcon`, `rconmdp`) VALUES ('$port', '$querry', '$rcon', '$pass');")) {
                 echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout de vos données dans de la table ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
+            
 
+            
+            
             if ($erreur === 0) {    // test de la présence d'erreurs ou non.
                 echo "pas d'erreurs";
                 header('Location: ../index.php');
