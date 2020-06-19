@@ -89,13 +89,13 @@
             (int) $dernierid = 0;
             
             
-             if (!$mysqli->query('SELECT * FROM `serveurs` where `actif` = "0";')) {
+             if (!$mysqli->query('SELECT * FROM `serveurs`;')) {
                 $dernierid = 0;
             } else {
                 // Établissement de la connexion au serveur mysql.
                 $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
-                // Commande SQL permetant de récupérer la liste des serveurs actifs.
-                $req = 'SELECT * FROM `serveurs` where `actif` = "0";';
+                // Commande SQL permetant de récupérer la liste des serveurs.
+                $req = 'SELECT * FROM `serveurs`;';
                 // Envoie au serveur la commande via le biais des informations de connexion.
                 $res = $cnx->query($req);
 
