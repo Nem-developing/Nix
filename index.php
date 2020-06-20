@@ -71,7 +71,7 @@
                     <p class='card-text'>État du serveur : <span id='online'>En ligne</span> / <span id='horsligne'>Hors ligne</span></p>
                 </div>
                 <ul class='list-group list-group-flush'>
-                    <li class='list-group-item'>Nombre de joueurs Max : 150</li>
+                    <li class='list-group-item'>Joueurs maximum : $ligne->joueursmax</li>
                     <li class='list-group-item'>Créé le : $ligne->datecreation</li>
                     <li class='list-group-item'>Version : $ligne->version</li>
                     <li class='list-group-item'>ID : $ligne->id</li>
