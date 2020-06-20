@@ -48,6 +48,7 @@
             $version = $_POST['version'];       // On récupère les informations du formulaire précédent.
             $date = strftime("%d/%m/%y");       // On entre la date dans la variable $date.
             $ip = $_SERVER['REMOTE_ADDR'];      // On récupère l'addresse IP du client. | Note : Cette IP est stoqué sur la base de donné client uniquement.
+            $joueursmax = $_POST['joueursmax'];
             
             (int) $erreur = 0;
             
@@ -64,14 +65,14 @@
             }
             // Création de la table où l'on stoque les informations de créations de serveurs.
             // Nous notons que le champ "Actif" permet de trier les serveur actifs (=0) de ceux qui sont supprimés(=1)
-            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `serveurs` ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `nom` varchar(21) NOT NULL, `version` varchar(7) NOT NULL, `datecreation` varchar(10) NOT NULL, `ipcrea` varchar(19) NOT NULL,  `actif` int(1) NOT NULL );")) {
+            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `serveurs` ( `id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `nom` varchar(21) NOT NULL, `version` varchar(7) NOT NULL,`joueursmax` INT NOT NULL, `datecreation` varchar(10) NOT NULL, `ipcrea` varchar(19) NOT NULL,  `actif` int(1) NOT NULL );")) {
                 echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table serveurs ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
 
             // On ajoute les informations du formulaire dans la table "serveurs".
-            if (!$mysqli->query("INSERT INTO `serveurs` (`nom`, `version` , `datecreation`, `ipcrea`, `actif`) VALUES ('$namesrv', '$version', '$date', '$ip', '0');")) {
+            if (!$mysqli->query("INSERT INTO `serveurs` (`nom`, `version`, `joueursmax`, `datecreation`, `ipcrea`, `actif`) VALUES ('$namesrv', '$version' ,'$joueursmax' ,'$date', '$ip', '0');")) {
                 echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout de vos données dans de la table ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
