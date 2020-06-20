@@ -66,8 +66,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Version du serveur</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="joueursmax">
+                    <label for="exampleFormControlSelect2">Nombre maximum de joueurs</label>
+                    <select multiple class="form-control" id="exampleFormControlSelect2" name="joueursmax">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
