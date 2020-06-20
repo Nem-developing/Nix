@@ -196,7 +196,7 @@
             echo "$s";
 
             // Création de l'insertion du serveur dans un Screen.
-      		$s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'screen -AmdS server_$idserveur ./start.sh' > start_avec_screen.sh");
+      		$s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'screen -AmdS serveur_$idserveur ./start.sh' > start_avec_screen.sh");
             echo "$s";
 
             // Définition des deux fichier de lancement comme des fichier éxecutables. 
