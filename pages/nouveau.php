@@ -187,9 +187,34 @@
                     break;
                 
             }
+            // Changement de répertoire.
+            chdir("/home/mwsrv-user/");
             
+            // Création d'un dossier corespondant à l'id du serveur.
+            mkdir("$idserveur", 0700);
             
+            // Téléchargement du fichier server.jar.
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ;wget $liendownload");
+            echo "$s";
+
+            // Premier lancement du serveurs.
+            shell_exec("cd /home/mwsrv-user/$idserveur ; java -jar server.jar");
             
+            // Activation du EULA.
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; sed -i 's/false/true/g' eula.txt");
+            echo "$s";
+
+            // Création du fichier de lancement du serveur.
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'java -Xmx128M -Xms128M -jar server.jar nogui' > start.sh");
+            echo "$s";
+
+            // Création de l'insertion du serveur dans un Screen.
+      		$s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'screen -AmdS server_$idserveur ./start.sh' > start_avec_screen.sh");
+            echo "$s";
+
+            // Définition des deux fichier de lancement comme des fichier éxecutables. 
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; chmod +x start.sh ; chmod +x start_avec_screen.sh ");
+            echo "$s";
             ?>
 
 
