@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Nombre de joueur max</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2" name="maxplayers">
+                    <select multiple class="form-control" id="exampleFormControlSelect2" name="joueursmax">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
