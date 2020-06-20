@@ -93,3 +93,9 @@ html {
     font-weight: bold;
     font-family: 'polices/BerkshireSwash-Regular';
 }
+
+
+/* Boutton de modification de serveurs*/
+.pencil {
+    padding-bottom: 10px;
+}
