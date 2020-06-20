@@ -37,7 +37,6 @@
 
 
         <! -- Titre de la page -->
-    <center>
         <div id="page">
             <p class="h1 breakshire" id="titrepage">Création d'un nouveau serveur</p>
 
@@ -48,11 +47,11 @@
             <form action="nouveau.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du nouveau serveur</label>
-                    <input class="form-control form-control-lg" type="text" name="namesrv" placeholder="Exemple : Nemixcraft">
+                    <input class="form-control form-control-lg" type="text" name="namesrv" placeholder="Exemple : Nemixcraft" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Version du serveur</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="version">
+                    <select class="form-control" id="exampleFormControlSelect1" name="version" required>
                         <option>1.15.2</option>
                         <option>1.15</option>
                         <option>1.14</option>
@@ -67,7 +66,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Nombre maximum de joueurs</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2" name="joueursmax">
+                    <select multiple class="form-control" id="exampleFormControlSelect2" name="joueursmax" required>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -99,7 +98,7 @@
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Créer le serveur</button>
             </form>
         </div>
-    </center>
+    
 
 
 
