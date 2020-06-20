@@ -127,20 +127,6 @@
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
-            
-
-            
-            
-            if ($erreur === 0) {    // test de la présence d'erreurs ou non.
-                echo "pas d'erreurs";
-                header('Location: ../index.php');
-                exit();
-            } else {
-                echo "<h1>Il semble y avoir une erreur, veuillez vous référer à l'alerte au dessus !</h1>";
-            }
-            
-            
-            
 
 
 
@@ -215,6 +201,28 @@
             // Définition des deux fichier de lancement comme des fichier éxecutables. 
             $s = shell_exec("cd /home/mwsrv-user/$idserveur ; chmod +x start.sh ; chmod +x start_avec_screen.sh ");
             echo "$s";
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            if ($erreur === 0) {    // test de la présence d'erreurs ou non.
+                echo "pas d'erreurs";
+                header('Location: ../index.php');
+                exit();
+            } else {
+                echo "<h1>Il semble y avoir une erreur, veuillez vous référer à l'alerte au dessus !</h1>";
+            }
             ?>
 
 
