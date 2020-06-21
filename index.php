@@ -68,12 +68,12 @@
                 // 1 = Hors lingne // 0 = En ligne
                 (int) $testetat = shell_exec("if ! screen -list | grep -q 'serveur_$ligne->id';  then   echo '1';  else echo '0'; fi");
                 if ($testetat == 1) {
-                    $etatduserveur = "Hors ligne";
+                    $etatduserveur = "<span id='horsligne'>Hors ligne</span>";
                 } 
 
 
                 if ($testetat == 0) {
-                    $etatduserveur = "En ligne";
+                    $etatduserveur = "<span id='online'>En ligne</span>";
                 } 
 
 
