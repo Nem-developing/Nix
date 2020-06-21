@@ -17,14 +17,14 @@
 
         switch ($action) {
             case "lancer":
-                echo "Démarrage du serveur";
+                echo "Démmarage du serveur";
                 
-                shell_exec("cd /home/mwsrv-user/$idserveur ;sh start_avec_screen.sh");
+                shell_exec("cd /home/mwsrv-user/$id ; sh start_avec_screen.sh");
                 
                 break;
             case "stopper":
                 echo "Extinction du serveur";
-                shell_exec("cd /home/mwsrv-user/$idserveur ; screen -S serveur_$id -p 0 -X stuff `printf 'stop\r'`");
+                shell_exec("screen -S serveur_$id -p 0 -X stuff `printf 'stop\r'`");
                 break;
         }
         
