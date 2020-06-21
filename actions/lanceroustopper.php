@@ -20,14 +20,16 @@
                 echo "Démmarage du serveur";
                 
                 shell_exec("cd /home/mwsrv-user/$id ; sh start_avec_screen.sh");
-                
+                header('Location: ../index.php');
+                exit();
                 break;
             case "stopper":
                 echo "Extinction du serveur";
                 shell_exec("screen -S serveur_$id -p 0 -X stuff `printf 'stop\r'`");
+                header('Location: ../index.php');
+                exit();
                 break;
         }
-        
         
         ?>
 
