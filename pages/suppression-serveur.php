@@ -83,7 +83,7 @@
                                     <td>$ligne->nom</td>
                                     <td>$ligne->version</td>
                                     <td>$ligne->datecreation</td>
-                                    <td><a href='suppression.php?id=$id'><button type='button' class='btn btn-danger'>Supprimer le serveur</button></a></td>
+                                    <td><a href='../actions/suppression.php?id=$id'><button type='button' class='btn btn-danger'>Supprimer le serveur</button></a></td>
                                 </tr>
                              ";
                     
