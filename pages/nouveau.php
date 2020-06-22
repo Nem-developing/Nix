@@ -204,13 +204,16 @@
             echo "$s";
             
             
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR //
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
-            
-            
-            
-            
-            
-            
+            // Création de la table où l'on stoque les propriétés du serveur.
+            if (!$mysqli->query("CREATE TABLE `server.properties` (`query.port` int NOT NULL,`op-permission-level=4` int NOT NULL,`allow-nether` varchar(5) NOT NULL,`level-name` varchar(20) NOT NULL,`enable-query` varchar(5) NOT NULL,`allow-flight` varchar(5) NOT NULL,`announce-player-achievements` varchar(5) NOT NULL,`server-port` int NOT NULL,`level-type` varchar(15) NOT NULL,`enable-rcon` varchar(5) NOT NULL,`level-seed` varchar(32) NOT NULL,`force-gamemode` varchar(5) NOT NULL,`server-ip` int NOT NULL,`max-build-height` int NOT NULL,`spawn-npcs` varchar(5) NOT NULL,`white-list` varchar(5) NOT NULL,`rcon.password` varchar(30) NOT NULL,`spawn-animals` varchar(5) NOT NULL,`hardcore` varchar(5) NOT NULL,`snooper-enabled` varchar(5) NOT NULL,`online-mode` varchar(5) NOT NULL,`resource-pack` varchar(30) NOT NULL,`pvp` varchar(5) NOT NULL,`difficulty` int NOT NULL,`enable-command-block` varchar(5) NOT NULL,`gamemode` int NOT NULL,`player-idle-timeout` int NOT NULL,`max-players` int NOT NULL,`rcon.port` int NOT NULL,`spawn-monsters` varchar(5) NOT NULL,`generate-structures` varchar(5) NOT NULL,`view-distance` int NOT NULL,`motd` varchar(25) NOT NULL);")) {
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table server.properties ! </div>";    // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+                $erreur = $erreur + 1;
+            }
             
             
             
