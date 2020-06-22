@@ -44,7 +44,7 @@
             <!-- Formulaire de création d'un nouveau serveur-->
 
 
-            <form action="nouveau.php" method="post">
+            <form action="../actions/nouveau.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du nouveau serveur</label>
                     <input class="form-control form-control-lg" type="text" name="namesrv" placeholder="Exemple : Nemixcraft" required>
