@@ -192,7 +192,7 @@
             echo "$s";
 
             // Création du fichier de lancement du serveur.
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'java -Xmx128M -Xms128M -jar server.jar nogui' > start.sh");
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'java $commandedelancement -jar server.jar nogui' > start.sh");
             echo "$s";
 
             // Création de l'insertion du serveur dans un Screen.
