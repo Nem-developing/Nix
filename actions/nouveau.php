@@ -215,6 +215,12 @@
                 $erreur = $erreur + 1;
             }
             
+            // Ajout des options par défaut.
+            if (!$mysqli->query("INSERT INTO `server.properties` (`query.port`, `op-permission-level`, `allow-nether`, `level-name`, `enable-query`, `allow-flight`, `announce-player-achievements`, `server-port`, `level-type`, `enable-rcon`, `level-seed`, `force-gamemode`, `server-ip`, `max-build-height`, `spawn-npcs`, `white-list`, `rcon.password`, `spawn-animals`, `hardcore`, `snooper-enabled`, `online-mode`, `resource-pack`, `pvp`, `difficulty`, `enable-command-block`, `gamemode`, `player-idle-timeout`, `max-players`, `rcon.port`, `spawn-monsters`, `generate-structures`, `view-distance`, `motd`) VALUES ('42424242', '4', 'true', 'world', 'true', 'false', 'true', '9999999', 'default', 'true', '', 'false', '', '256', 'true', 'false', 'jfdisjfidosjfiojsfd', 'true', 'false', 'true', 'true', '', 'true', '1', 'false', '0', '0', '777', '88888888888', 'true', 'true', '10', 'Un serveur Minecraft !');")) {
+                echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout des options par défaut dans la table server.properties ! </div>";    // Affichage de l'erreur.
+                echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+                $erreur = $erreur + 1;
+            }
             
             
             
