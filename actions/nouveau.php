@@ -56,6 +56,10 @@
             if (!$ip) {
                 $ip = "0.0.0.0";    // Si l'utilisateur utilise un proxy ; La fonction Remote addr peut dysfonctionner ; C'est une mesure de sécurité.
             }
+            // Changement d'encodage.
+            $s = shell_exec("locale-gen fr_FR ISO-8859-1");
+            echo "$s";
+            
 
             //  Connexion à la base de donnée.
             $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");
