@@ -68,6 +68,7 @@
         // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
         while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
             $nom = $ligne->nom;
+            $joueursmax = $ligne->joueursmax;
         }
         
         
@@ -96,7 +97,7 @@
                     <input class="form-control form-control-lg" type="text" name="namesrv" value="<?php echo"$nom";?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect2">Nombre maximum de joueurs</label>
+                    <label for="exampleFormControlSelect2">Nombre maximum de joueurs (Actuellement : <?php echo"$joueursmax";?>).</label>
                     <select multiple class="form-control" id="exampleFormControlSelect2" name="joueursmax">
                         <option>1</option>
                         <option>2</option>
