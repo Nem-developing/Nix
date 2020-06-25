@@ -37,7 +37,38 @@
         
         // Récupération des infomrations du serveur.
         
+        include "../config/config.php"; // Import des données de connexion.
+        $id = $_GET['id'];
         
+        // Si un utilisateur tente d'accéder à cette page sans passer par les boutons adaptés, alors on va l'éjecter pour ne pas qu'il
+        // y ait un soucis lors des requettes.
+        if (!$_GET['id']){
+            echo 'Erreur, vous de devez pas être là !';
+            header('Location: ../index.php');   // redireciton vers la page d'acceuil.
+            exit();
+        }
+        
+        //  Test de connexion à la base de donnée.
+        $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");
+        if ($mysqli->connect_errno) {
+            echo "<div class='alert alert-danger' role='alert'> Echec lors de la connexion à MySQL ! </div>";   // Affichage de l'erreur.
+            echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+            $erreur = $erreur + 1;
+        }
+        
+        
+        // Récupération des informations du serveur dans les tables de données.
+        // Établissement de la connexion au serveur mysql.
+        $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
+        // Commande SQL permetant de récupérer la liste des serveurs actifs.
+        $req = 'SELECT * FROM serveurs where id = "'.$id.'"';
+        // Envoie au serveur la commande via le biais des informations de connexion.
+        $res = $cnx->query($req);
+
+        // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
+        while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+            $nom = $ligne->nom;
+        }
         
         
         
@@ -58,11 +89,11 @@
 
             <!-- Formulaire de création d'un nouveau serveur-->
 
-
+            
             <form action="../actions/modifier-un-serveur.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du serveur</label>
-                    <input class="form-control form-control-lg" type="text" name="namesrv" value="Exemple : Nemixcraft" required>
+                    <input class="form-control form-control-lg" type="text" name="namesrv" value="<?php echo"$nom";?>" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Nombre maximum de joueurs</label>
