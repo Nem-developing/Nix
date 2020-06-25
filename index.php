@@ -77,6 +77,8 @@
                 } 
 
 
+                // Calcul du numéro de port.
+                $port = $ligne->id + 25564;
                 
                 
                 
@@ -92,6 +94,7 @@
                     <li class='list-group-item'>Créé le : $ligne->datecreation</li>
                     <li class='list-group-item'>Version : $ligne->version</li>
                     <li class='list-group-item'>ID : $ligne->id</li>
+                    <li class='list-group-item'>Port : $port</li>
                 </ul>
                 <div class='card-body'> 
                     <a href='pages/modifier-un-serveur.php?id=$ligne->id' class='card-link pencil'><svg class='bi bi-pencil' width='1em' height='1em' viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'>
