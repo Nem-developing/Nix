@@ -221,7 +221,7 @@
             echo "$s";
             $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo max-players=$joueursmax >> server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo motd=Serveur $namesrv déployé par MW-SRV ! >> server.properties");
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo motd=Serveur $namesrv via MW-SRV ! >> server.properties");
             echo "$s";
             
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
