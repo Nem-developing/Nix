@@ -203,6 +203,18 @@
             $s = shell_exec("cd /home/mwsrv-user/$idserveur ; chmod +x start.sh ; chmod +x start_avec_screen.sh ");
             echo "$s";
             
+            // Ajout des paramètres dans server.properties. 
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo server-port=$port > server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo query.port=$querry >> server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo enable-rcon=true >> server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo rcon.port=$rcon >> server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo rcon.password=$pass >> server.properties");
+            echo "$s";
+            
             
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //  PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR //
