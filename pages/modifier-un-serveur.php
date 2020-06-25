@@ -91,7 +91,7 @@
             <!-- Formulaire de création d'un nouveau serveur-->
 
             
-            <form action="../actions/modifier-un-serveur.php" method="post">
+            <form action="../actions/modifier.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du serveur</label>
                     <input class="form-control form-control-lg" type="text" name="namesrv" value="<?php echo"$nom";?>" required>
