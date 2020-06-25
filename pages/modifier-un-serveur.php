@@ -85,7 +85,7 @@
 
         <! -- Titre de la page -->
         <div id="page">
-            <p class="h1 breakshire" id="titrepage">Modification d'un serveur</p>
+            <p class="h1 breakshire" id="titrepage">Modification du serveur <?php echo"$nom";?></p>
 
 
             <!-- Formulaire de création d'un nouveau serveur-->
