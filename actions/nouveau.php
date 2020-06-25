@@ -214,7 +214,8 @@
             echo "$s";
             $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo rcon.password=$pass >> server.properties");
             echo "$s";
-            
+            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo max-players=$joueursmax >> server.properties");
+            echo "$s";
             
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //  PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR - PROPRIÉTÉS DU SERVEUR //
