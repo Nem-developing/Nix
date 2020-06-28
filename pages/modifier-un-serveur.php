@@ -60,7 +60,7 @@
         // Récupération des informations du serveur dans les tables de données.
         // Établissement de la connexion au serveur mysql.
         $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
-        // Commande SQL permetant de récupérer la liste des serveurs actifs.
+        // Commande SQL permetant de récupérer la liste des informations du serveur.
         $req = 'SELECT * FROM serveurs where id = "'.$id.'"';
         // Envoie au serveur la commande via le biais des informations de connexion.
         $res = $cnx->query($req);
@@ -68,10 +68,16 @@
         // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
         while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
             $nom = $ligne->nom;
-            $joueursmax = $ligne->joueursmax;
         }
-        
-        
+
+        $req = 'SELECT * FROM `server.properties` where id = "'.$id.'"';
+        // Envoie au serveur la commande via le biais des informations de connexion.
+        $res = $cnx->query($req);
+
+        // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
+        while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+            $querryport = $ligne->queryport;
+        }
         
         
         
@@ -127,7 +133,11 @@
                         <option>777</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Créer le serveur</button>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry.</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo"$querryport";?>" disabled>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
     
