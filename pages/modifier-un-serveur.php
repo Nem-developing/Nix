@@ -76,7 +76,7 @@
 
         // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
         while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
-            $querryport = $ligne->queryport;
+            $querryport = $ligne->query-port;
         }
         
         
