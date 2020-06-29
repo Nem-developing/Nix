@@ -165,6 +165,12 @@
                         Atention, si vous modifiez cette option, la carte sera régénérée !!
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Vol Autorisé (Fly)</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($allowflight); ?>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
