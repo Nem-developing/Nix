@@ -164,6 +164,9 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry.</label>
                     <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo"$querryport";?>" disabled>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Vous n'avez pas accès à cette option. Elle n'est présente qu'à titre indicatif.
+                    </small>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
