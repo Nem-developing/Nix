@@ -69,14 +69,14 @@
         while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
             $nom = $ligne->nom;
         }
-
         $req = 'SELECT * FROM `server.properties` where id = "'.$id.'"';
         // Envoie au serveur la commande via le biais des informations de connexion.
         $res = $cnx->query($req);
 
         // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
         while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
-            $querryport = $ligne->query-port;
+            $querryport = $ligne->queryport;
+            $joueursmax = $ligne->maxplayers;
         }
         
         
