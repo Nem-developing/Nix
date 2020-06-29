@@ -74,9 +74,37 @@
         $res = $cnx->query($req);
 
         // Boucle tant qu'il y a de lignes corespondantes à la requettes donc seulement une.
+        // Définition des données variables selon les différents serveurs.
         while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
             $querryport = $ligne->queryport;
             $joueursmax = $ligne->maxplayers;
+            $oppermissionlevel = $ligne->oppermissionlevel;
+            $allownether = $ligne->allownether;
+            $levelname = $ligne->levelname;
+            $allowflight = $ligne->levelname;
+            $announceplayerachievements = $ligne->levelname;
+            $leveltype = $ligne->leveltype;
+            $forcegamemode = $ligne->forcegamemode;
+            $serverip = $ligne->serverip;
+            $maxbuildheight = $ligne->maxbuildheight;
+            $spawnnpcs = $ligne->spawnnpcs;
+            $whitelist = $ligne->whitelist;
+            $spawnanimals = $ligne->spawnanimals;
+            $hardcore = $ligne->hardcore;
+            $snooperenabled = $ligne->snooperenabled;
+            $onlinemode = $ligne->onlinemode;
+            $resourcepack = $ligne->resourcepack;
+            $pvp = $ligne->pvp;
+            $difficulty = $ligne->difficulty;
+            $enablecommandblock = $ligne->enablecommandblock;
+            $gamemode = $ligne->gamemode;
+            $playeridletimeout = $ligne->playeridletimeout;
+            $maxplayers = $ligne->maxplayers;
+            $rconport = $ligne->rconport;
+            $spawnmonsters = $ligne->spawnmonsters;
+            $generatestructures	= $ligne->generatestructures;
+            $viewdistance = $ligne->viewdistance;
+            $motd = $ligne->motd;
         }
         
         
