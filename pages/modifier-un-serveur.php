@@ -132,7 +132,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Nombre maximum de joueurs.</label>
-                    <input type="number" name="count" min="1" max="777" name="joueursmax" value="<?php echo"$joueursmax";?>">
+                    <input type="number" class="form-control" name="count" min="1" max="777" name="joueursmax" value="<?php echo"$joueursmax";?>">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry.</label>
