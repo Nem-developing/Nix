@@ -132,7 +132,7 @@
             <form action="../actions/modifier.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du serveur</label>
-                    <input class="form-control form-control-lg" type="text" name="namesrv" value="<?php echo"$nom"; ?>" required>
+                    <input class="form-control form-control-lg" type="text" name="nomserveur" value="<?php echo"$nom"; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect2">Nombre maximum de joueurs.</label>
@@ -165,8 +165,13 @@
                         <?php echo ouiounon($allownether); ?>
                     </select>
                 </div>
-
-
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Nom de la carte du monde.</label>
+                    <input class="form-control form-control-lg" type="text" name="nommap" value="<?php echo"$levelname"; ?>" required>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Atention, si vous modifiez cette option, la carte sera régénérée !!
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
