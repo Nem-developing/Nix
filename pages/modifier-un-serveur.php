@@ -180,6 +180,54 @@
                         Cette option diffuse un message dans le tchat anoncant la réalisation d'un succès par l'un des joueurs sur le serveur.
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Type de carte</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php
+                        switch ($leveltype) {
+                            case "default": {
+                                echo "
+                                    <option selected>default</option>
+                                    <option>flat</option>
+                                    <option>largeBiomes</option>
+                                    <option>amplified</option>
+                                    ";
+                                break;
+                            }
+                            case "flat": {
+                                echo "
+                                    <option>default</option>
+                                    <option selected>flat</option
+                                    <option>largeBiomes</option>
+                                    <option>amplified</option>
+                                    ";
+                                break;
+                            }
+                            case "largeBiomes": {
+                                echo "
+                                    <option>default</option>
+                                    <option>flat</option>
+                                    <option selected>largeBiomes</option>
+                                    <option>amplified</option>
+                                    ";
+                                break;
+                            }
+                            case "amplified": {
+                                echo "
+                                    <option>default</option>
+                                    <option>flat</option>
+                                    <option>largeBiomes</option>
+                                    <option selected>amplified</option>
+                                    ";
+                                break;
+                            }
+                        }
+                        ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Cette option change le type de carte de jeu. Default = Monde "Normal". Flat = Monde plat. LargeBiomes = Les biomes sont plus grand. Amplified = Exactement comme par défaut mais la hauteur du monde est plus élevlée.
+                    </small>
+                </div>  
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
