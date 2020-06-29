@@ -106,25 +106,14 @@
             $viewdistance = $ligne->viewdistance;
             $motd = $ligne->motd;
         }
-        
-        
-        
-        
-        
         ?>
         
-        
-        
-
-
         <! -- Titre de la page -->
         <div id="page">
             <p class="h1 breakshire" id="titrepage">Modification du serveur <?php echo"$nom";?></p>
 
 
             <!-- Formulaire de modification d'un serveur-->
-
-            
             <form action="../actions/modifier.php" method="post">
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Nom du serveur</label>
@@ -139,6 +128,18 @@
                     <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo"$querryport";?>" disabled>
                     <small id="passwordHelpBlock" class="form-text text-muted">
                         Vous n'avez pas accès à cette option. Elle n'est présente qu'à titre indicatif.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Niveau de permitions des opérateurs (OP).</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Cette option détermine les autorisations pour les membres OP (Opérateurs) du serveur. 1 = Les membres OP peuvent passer outre les restrictions de protections du spawn du serveur. 2 = Les membres OP peuvent utiliser toutes les commandes de triche sur le serveur & utiliser des commandes blocs. 3 = Les membres OP peuvent utiliser les commandes d'administration (/ban ; /op ; etc). 4 = Les membres OP peuvent utiliser toutes les commandes disponibles sur le serveur ainsi que celles permetant de sauvegarder le serveur et de l'arrêter (/save-all ; /stop).
                     </small>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
