@@ -141,14 +141,14 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry.</label>
                     <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo"$querryport"; ?>" disabled>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                         Vous n'avez pas accès à cette option. Elle n'est présente qu'à titre indicatif.
                     </small>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Niveau de permitions des opérateurs (OP).</label>
                     <input type="number" class="form-control" name="count" min="1" max="4" name="opperms" value="<?php echo"$oppermissionlevel"; ?>">
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                         Cette option détermine les autorisations pour les membres OP (Opérateurs) du serveur. 1 = Les membres OP peuvent passer outre les restrictions de protections du spawn du serveur. 2 = Les membres OP peuvent utiliser toutes les commandes de triche sur le serveur & utiliser des commandes blocs. 3 = Les membres OP peuvent utiliser les commandes d'administration (/ban ; /op ; etc). 4 = Les membres OP peuvent utiliser toutes les commandes disponibles sur le serveur ainsi que celles permetant de sauvegarder le serveur et de l'arrêter (/save-all ; /stop).
                     </small>
                 </div>
@@ -161,7 +161,7 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Nom de la carte du monde.</label>
                     <input class="form-control form-control-lg" type="text" name="nommap" value="<?php echo"$levelname"; ?>" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                         Atention, si vous modifiez cette option, la carte sera régénérée !!
                     </small>
                 </div>
@@ -171,11 +171,18 @@
                         <?php echo ouiounon($allowflight); ?>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Diffusion des succès (Achivements)</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($announceplayerachievements); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Cette option diffuse un message dans le tchat anoncant la réalisation d'un succès par l'un des joueurs sur le serveur.
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
-
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
