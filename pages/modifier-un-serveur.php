@@ -153,13 +153,6 @@
                     </small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">.</label>
-                    <input type="number" class="form-control" name="count" min="1" max="4" name="opperms" value="<?php echo"$oppermissionlevel"; ?>">
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                        Cette option détermine les autorisations pour les membres OP (Opérateurs) du serveur. 1 = Les membres OP peuvent passer outre les restrictions de protections du spawn du serveur. 2 = Les membres OP peuvent utiliser toutes les commandes de triche sur le serveur & utiliser des commandes blocs. 3 = Les membres OP peuvent utiliser les commandes d'administration (/ban ; /op ; etc). 4 = Les membres OP peuvent utiliser toutes les commandes disponibles sur le serveur ainsi que celles permetant de sauvegarder le serveur et de l'arrêter (/save-all ; /stop).
-                    </small>
-                </div>
-                <div class="form-group">
                     <label for="exampleFormControlSelect1">Nether Autorisé</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <?php echo ouiounon($allownether); ?>
