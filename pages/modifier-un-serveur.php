@@ -252,6 +252,13 @@
                         Cette option définit le mode de jeu que le serveur utilisera si vous activez l'option force gamemode. Attention, si vous n'avez pas activé le force gamemode, vous ne verrez aucun changement.g
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">IP du serveur</label>
+                    <input class="form-control form-control-lg" type="text" value="<?php echo"$serverip"; ?>" required>
+                    <small class="form-text text-muted">
+                        Cette option vous permez de définir l'adresse IP de votre serveur. Il est consseilé de laisser ce champ vide.
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
         </div>
