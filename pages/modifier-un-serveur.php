@@ -83,6 +83,7 @@
             $allowflight = $ligne->levelname;
             $announceplayerachievements = $ligne->levelname;
             $leveltype = $ligne->leveltype;
+            $levelseed = $ligne->levelseed;
             $forcegamemode = $ligne->forcegamemode;
             $serverip = $ligne->serverip;
             $maxbuildheight = $ligne->maxbuildheight;
@@ -110,14 +111,14 @@
         function ouiounon($variable) {
             if ($variable == "true") {
                 echo "
-                <option selected>Oui</option>
-                <option>Non</option>
-                ";
+                    <option selected>Oui</option>
+                    <option>Non</option>
+                    ";
             } else {
                 echo "
-                <option>Oui</option>
-                <option selected>Non</option>
-                ";
+                    <option>Oui</option>
+                    <option selected>Non</option>
+                    ";
             }
             return;
         }
@@ -186,41 +187,41 @@
                         <?php
                         switch ($leveltype) {
                             case "default": {
-                                echo "
-                                    <option selected>default</option>
-                                    <option>flat</option>
-                                    <option>largeBiomes</option>
-                                    <option>amplified</option>
-                                    ";
-                                break;
-                            }
+                                    echo "
+                                        <option selected>default</option>
+                                        <option>flat</option>
+                                        <option>largeBiomes</option>
+                                        <option>amplified</option>
+                                        ";
+                                    break;
+                                }
                             case "flat": {
-                                echo "
-                                    <option>default</option>
-                                    <option selected>flat</option
-                                    <option>largeBiomes</option>
-                                    <option>amplified</option>
-                                    ";
-                                break;
-                            }
+                                    echo "
+                                        <option>default</option>
+                                        <option selected>flat</option
+                                        <option>largeBiomes</option>
+                                        <option>amplified</option>
+                                        ";
+                                    break;
+                                }
                             case "largeBiomes": {
-                                echo "
-                                    <option>default</option>
-                                    <option>flat</option>
-                                    <option selected>largeBiomes</option>
-                                    <option>amplified</option>
-                                    ";
-                                break;
-                            }
+                                    echo "
+                                        <option>default</option>
+                                        <option>flat</option>
+                                        <option selected>largeBiomes</option>
+                                        <option>amplified</option>
+                                        ";
+                                    break;
+                                }
                             case "amplified": {
-                                echo "
-                                    <option>default</option>
-                                    <option>flat</option>
-                                    <option>largeBiomes</option>
-                                    <option selected>amplified</option>
-                                    ";
-                                break;
-                            }
+                                    echo "
+                                        <option>default</option>
+                                        <option>flat</option>
+                                        <option>largeBiomes</option>
+                                        <option selected>amplified</option>
+                                        ";
+                                    break;
+                                }
                         }
                         ?>
                     </select>
@@ -228,6 +229,13 @@
                         Cette option change le type de carte de jeu. Default = Monde "Normal". Flat = Monde plat. LargeBiomes = Les biomes sont plus grand. Amplified = Exactement comme par défaut mais la hauteur du monde est plus élevlée.
                     </small>
                 </div>  
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">SEED de la carte</label>
+                    <input type="number" class="form-control" name="count" min="0" max="18446744073709551616" value="<?php echo"$levelseed"; ?>">
+                    <small class="form-text text-muted">
+                        Cette option te prermetra de gérer la façon dont est créée ta map ! Attention, vous avez besoin de recréer une map pour que vos modifications ici soient priées en compte dans le jeu.
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
