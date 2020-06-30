@@ -236,6 +236,14 @@
                         Cette option te prermetra de gérer la façon dont est créée ta map ! Attention, vous avez besoin de recréer une map pour que vos modifications ici soient priées en compte dans le jeu.
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Forcer le mode de jeu (Force GameMode)</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($forcegamemode); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                            Le serveur forcera dès l'arrivée des joueurs dans le serveur, à être dans le gamodème défini par l'option "Game Mode".                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
         </div>
