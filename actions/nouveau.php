@@ -229,14 +229,13 @@
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             
             // Création de la table où l'on stoque les propriétés du serveur.
-            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `server.properties` (`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `queryport` int NOT NULL,`oppermissionlevel` int NOT NULL,`allownether` varchar(5) NOT NULL,`levelname` varchar(20) NOT NULL,`enablequery` varchar(5) NOT NULL,`allowflight` varchar(5) NOT NULL,`announceplayerachievements` varchar(5) NOT NULL,`serverport` int NOT NULL,`leveltype` varchar(15) NOT NULL,`enablercon` varchar(5) NOT NULL,`levelseed` varchar(32) NOT NULL,`forcegamemode` varchar(5) NOT NULL,`serverip` int NOT NULL,`maxbuildheight` int NOT NULL,`spawnnpcs` varchar(5) NOT NULL,`whitelist` varchar(5) NOT NULL,`rconpassword` varchar(30) NOT NULL,`spawnanimals` varchar(5) NOT NULL,`hardcore` varchar(5) NOT NULL,`snooperenabled` varchar(5) NOT NULL,`onlinemode` varchar(5) NOT NULL,`resourcepack` varchar(30) NOT NULL,`pvp` varchar(5) NOT NULL,`difficulty` int NOT NULL,`enablecommandblock` varchar(5) NOT NULL,`gamemode` int NOT NULL,`playeridletimeout` int NOT NULL,`maxplayers` int NOT NULL,`rconport` int NOT NULL,`spawnmonsters` varchar(5) NOT NULL,`generatestructures` varchar(5) NOT NULL,`viewdistance` int NOT NULL,`motd` varchar(25) NOT NULL);")) {                
-                echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table server.properties ! </div>";    // Affichage de l'erreur.
+            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `server.properties` (`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `queryport` int NOT NULL,`oppermissionlevel` int NOT NULL,`allownether` varchar(5) NOT NULL,`levelname` varchar(20) NOT NULL,`enablequery` varchar(5) NOT NULL,`allowflight` varchar(5) NOT NULL,`announceplayerachievements` varchar(5) NOT NULL,`serverport` int NOT NULL,`leveltype` varchar(15) NOT NULL,`enablercon` varchar(5) NOT NULL,`levelseed` varchar(32) NOT NULL,`forcegamemode` varchar(5) NOT NULL,`serverip` int NOT NULL,`maxbuildheight` int NOT NULL,`spawnnpcs` varchar(5) NOT NULL,`whitelist` varchar(5) NOT NULL,`rconpassword` varchar(30) NOT NULL,`spawnanimals` varchar(5) NOT NULL,`hardcore` varchar(5) NOT NULL,`snooperenabled` varchar(5) NOT NULL,`onlinemode` varchar(5) NOT NULL,`resourcepack` varchar(30) NOT NULL,`pvp` varchar(5) NOT NULL,`difficulty` int NOT NULL,`enablecommandblock` varchar(5) NOT NULL,`gamemode` int NOT NULL,`playeridletimeout` int NOT NULL,`maxplayers` int NOT NULL,`rconport` int NOT NULL,`spawnmonsters` varchar(5) NOT NULL,`generatestructures` varchar(5) NOT NULL,`viewdistance` int NOT NULL,`motd` varchar(25) NOT NULL);")) {                echo "<div class='alert alert-danger' role='alert'> Echec lors de la création de la table server.properties ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
             
             // Ajout des options par défaut.
-            if (!$mysqli->query("CREATE TABLE IF NOT EXISTS `server.properties` (`id` INT PRIMARY KEY NOT NULL AUTO_INCREMENT, `queryport` int NOT NULL,`oppermissionlevel` int NOT NULL,`allownether` varchar(5) NOT NULL,`levelname` varchar(20) NOT NULL,`enablequery` varchar(5) NOT NULL,`allowflight` varchar(5) NOT NULL,`announceplayerachievements` varchar(5) NOT NULL,`serverport` int NOT NULL,`leveltype` varchar(15) NOT NULL,`enablercon` varchar(5) NOT NULL,`levelseed` varchar(32) NOT NULL,`forcegamemode` varchar(5) NOT NULL,`serverip` varchar(15) NOT NULL,`maxbuildheight` int NOT NULL,`spawnnpcs` varchar(5) NOT NULL,`whitelist` varchar(5) NOT NULL,`rconpassword` varchar(30) NOT NULL,`spawnanimals` varchar(5) NOT NULL,`hardcore` varchar(5) NOT NULL,`snooperenabled` varchar(5) NOT NULL,`onlinemode` varchar(5) NOT NULL,`resourcepack` varchar(30) NOT NULL,`pvp` varchar(5) NOT NULL,`difficulty` int NOT NULL,`enablecommandblock` varchar(5) NOT NULL,`gamemode` int NOT NULL,`playeridletimeout` int NOT NULL,`maxplayers` int NOT NULL,`rconport` int NOT NULL,`spawnmonsters` varchar(5) NOT NULL,`generatestructures` varchar(5) NOT NULL,`viewdistance` int NOT NULL,`motd` varchar(25) NOT NULL);")) {                echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout des options par défaut dans la table server.properties ! </div>";    // Affichage de l'erreur.                
+            if (!$mysqli->query("INSERT INTO `server.properties` (`queryport`, `oppermissionlevel`, `allownether`, `levelname`, `enablequery`, `allowflight`, `announceplayerachievements`, `serverport`, `leveltype`, `enablercon`, `levelseed`, `forcegamemode`, `serverip`, `maxbuildheight`, `spawnnpcs`, `whitelist`, `rconpassword`, `spawnanimals`, `hardcore`, `snooperenabled`, `onlinemode`, `resourcepack`, `pvp`, `difficulty`, `enablecommandblock`, `gamemode`, `playeridletimeout`, `maxplayers`, `rconport`, `spawnmonsters`, `generatestructures`, `viewdistance`, `motd`) VALUES ('$querry', '4', 'true', 'world', 'true', 'false', 'true', '$port', 'default', 'true', '', 'false', '', '256', 'true', 'false', '$pass', 'true', 'false', 'true', 'true', '', 'true', '1', 'false', '0', '0', '$joueursmax', ' $rcon', 'true', 'true', '10', 'Un serveur Minecraft !');")) {                echo "<div class='alert alert-danger' role='alert'> Echec lors de l'ajout des options par défaut dans la table server.properties ! </div>";    // Affichage de l'erreur.
                 echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
                 $erreur = $erreur + 1;
             }
@@ -258,25 +257,10 @@
 
         </div>
     </center>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-
 </body>
 </html>
