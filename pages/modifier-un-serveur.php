@@ -242,7 +242,8 @@
                         <?php echo ouiounon($forcegamemode); ?>
                     </select>
                     <small class="form-text text-muted">
-                            Le serveur forcera dès l'arrivée des joueurs dans le serveur, à être dans le gamodème défini par l'option "Game Mode".                    </small>
+                            Le serveur forcera dès l'arrivée des joueurs dans le serveur, à être dans le gamodème défini par l'option "Game Mode".  
+                    </small>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
             </form>
