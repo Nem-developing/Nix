@@ -237,15 +237,22 @@
                     </small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Forcer le mode de jeu (Force GameMode)</label>
+                    <label for="exampleFormControlSelect1">Forcer le mode de jeu (Force Game Mode)</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <?php echo ouiounon($forcegamemode); ?>
                     </select>
                     <small class="form-text text-muted">
-                            Le serveur forcera dès l'arrivée des joueurs dans le serveur, à être dans le gamodème défini par l'option "Game Mode".  
+                        Le serveur forcera dès l'arrivée des joueurs dans le serveur, à être dans le gamodème défini par l'option "Game Mode".  
                     </small>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Modifier le serveur</button>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Mode de jeu (Game Mode)</label>
+                    <input type="number" class="form-control" name="count" min="0" max="3" value="<?php echo"$gamemode"; ?>">
+                    <small class="form-text text-muted">
+                        Cette option définit le mode de jeu que le serveur utilisera si vous activez l'option force gamemode. Attention, si vous n'avez pas activé le force gamemode, vous ne verrez aucun changement.g
+                    </small>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
