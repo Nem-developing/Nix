@@ -126,6 +126,7 @@
 
         <! -- Titre de la page -->
         <div id="page">
+            <center>
             <p class="h1 breakshire" id="titrepage">Modification du serveur <?php echo"$nom"; ?></p>
 
 
@@ -254,7 +255,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">IP du serveur</label>
-                    <input class="form-control form-control-lg" type="text" value="<?php echo"$serverip"; ?>" required>
+                    <input class="form-control form-control-lg" type="text" value="<?php echo"$serverip"; ?>">
                     <small class="form-text text-muted">
                         Cette option vous permez de définir l'adresse IP de votre serveur. Il est consseilé de laisser ce champ vide.
                     </small>
@@ -268,6 +269,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
+                </center>
         </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
