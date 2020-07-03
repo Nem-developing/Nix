@@ -259,6 +259,13 @@
                         Cette option vous permez de définir l'adresse IP de votre serveur. Il est consseilé de laisser ce champ vide.
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Hauteur de construction maximale</label>
+                    <input type="number" class="form-control" name="count" min="0" max="99999999999" value="<?php echo"$maxbuildheight"; ?>">
+                    <small class="form-text text-muted">
+                        Hauteur maximale de construction.
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
         </div>
