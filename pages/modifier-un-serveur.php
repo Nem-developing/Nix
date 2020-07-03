@@ -273,7 +273,7 @@
                         <?php echo ouiounon($spawnnpcs); ?>
                     </select>
                     <small class="form-text text-muted">
-                        Si désactivés, vous ne pourrez plus voir de vilageois.  
+                        Si désactivé, vous ne pourrez plus voir de vilageois.  
                     </small>
                 </div>
                 <div class="form-group">
@@ -283,6 +283,15 @@
                     </select>
                     <small class="form-text text-muted">
                         Si activés, vous devrez autoriser des joueurs à entrer sur le serveur pour que tel soit le cas.  
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Animaux activés</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($spawnanimals); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Si désactivé, aucun animal n'apparaîtras.
                     </small>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
