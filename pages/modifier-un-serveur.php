@@ -267,6 +267,15 @@
                         Hauteur maximale de construction.
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Vilageois activés</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($spawnnpcs); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Si désactivés, vous ne pourrez plus voir de vilageois.  
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
