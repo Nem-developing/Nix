@@ -276,6 +276,15 @@
                         Si désactivés, vous ne pourrez plus voir de vilageois.  
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Liste blanche (White List)</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($whitelist); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Si activés, vous devrez autoriser des joueurs à entrer sur le serveur pour que tel soit le cas.  
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
