@@ -297,7 +297,7 @@
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Mode Hardcore activé</label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                        <?php echo ouiounon($spawnanimals); ?>
+                        <?php echo ouiounon($hardcore); ?>
                     </select>
                     <small class="form-text text-muted">
                         Si activé, aucune régénération classique (Barre nouriture pleine) n'apparaitra.
