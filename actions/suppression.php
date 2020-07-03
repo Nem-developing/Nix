@@ -70,7 +70,7 @@
 
             if ($erreur === 0) {    // test de la présence d'erreurs ou non.
                 echo "pas d'erreurs";
-                header('Location: suppression-serveur.php');   // Redirection vers la page de suppression.
+                header('Location: suppression.php');   // Redirection vers la page de suppression.
                 exit();
             } else {
                 echo "<h1>Il semble y avoir une erreur, veuillez vous référer à l'alerte au dessus !</h1>";
