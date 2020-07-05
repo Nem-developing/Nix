@@ -362,6 +362,13 @@
                         Si désactivé, aucun monstre n'apparaîtra.  
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Distance d'affichage</label>
+                    <input type="number" class="form-control" name="count" min="3" max="15" value="<?php echo"$viewdistance"; ?>">
+                    <small class="form-text text-muted">
+                        Nombre de chunks ENVOYEES par le serveur. Important : cette valeur ne doit être utilisée qu'en cas de lags importants elle sera donc réduite.  
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
