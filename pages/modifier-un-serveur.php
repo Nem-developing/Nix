@@ -312,6 +312,15 @@
                         Si activé, le serveur envera les spécificités de la machine d'où il est stoqué (Nottament : Système d'exploitation, Version de java, etc.).
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Joueurs "Légaux" seulement ?</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($onlinemode); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Si désactivé, votre serveur acceptera les versions CRACK.  
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
