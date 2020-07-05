@@ -331,6 +331,15 @@
                     </small>
                 </div>
                 <div class="form-group">
+                    <label for="exampleFormControlSelect1">Commands blocks</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($enablecommandblock); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Il faut activer cette option pour pouvoir utiliser les commands blocs.  
+                    </small>
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Difficulté de jeu</label>
                     <input type="number" class="form-control" name="count" min="0" max="3" value="<?php echo"$difficulty"; ?>">
                     <small class="form-text text-muted">
