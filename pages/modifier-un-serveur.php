@@ -321,6 +321,15 @@
                         Si désactivé, votre serveur acceptera les versions CRACK.  
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">PVP Activé ?</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($pvp); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Si désactivé, aucun joueur ne pourra en taper un autre (Désolé...).  
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
