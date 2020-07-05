@@ -330,6 +330,13 @@
                         Si désactivé, aucun joueur ne pourra en taper un autre (Désolé...).  
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Difficulté de jeu</label>
+                    <input type="number" class="form-control" name="count" min="0" max="3" value="<?php echo"$difficulty"; ?>">
+                    <small class="form-text text-muted">
+                        Cette option définit la difficulté de jeu sur le serveur. 0 : Paisible. 1 : Facile. 2 : Normale. 3 : Difficile.                     
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
