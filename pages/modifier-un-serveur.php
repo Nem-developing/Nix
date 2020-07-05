@@ -353,6 +353,15 @@
                         Cette option définit le temps (en minute) d'inactivités autorisées. Note : 0 désactive simplement l'option.        
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Monstres Activés</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <?php echo ouiounon($spawnmonsters); ?>
+                    </select>
+                    <small class="form-text text-muted">
+                        Si désactivé, aucun monstre n'apparaîtra.  
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
