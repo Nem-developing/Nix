@@ -346,6 +346,13 @@
                         Cette option définit la difficulté de jeu sur le serveur. 0 : Paisible. 1 : Facile. 2 : Normale. 3 : Difficile.                     
                     </small>
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Temps d'inactivité autorisé</label>
+                    <input type="number" class="form-control" name="count" min="0" max="777" value="<?php echo"$playeridletimeout"; ?>">
+                    <small class="form-text text-muted">
+                        Cette option définit le temps (en minute) d'inactivités autorisées. Note : 0 désactive simplement l'option.        
+                    </small>
+                </div>
                 <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
             </form>
                 </center>
