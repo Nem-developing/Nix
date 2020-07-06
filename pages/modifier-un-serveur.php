@@ -137,6 +137,13 @@
                         <input class="form-control form-control-lg" type="text" name="nomserveur" value="<?php echo"$nom"; ?>" required>
                     </div>
                     <div class="form-group">
+                        <label for="exampleFormControlSelect2">Identifiant interne</label>
+                        <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo"$id"; ?>" disabled>
+                        <small class="form-text text-muted">
+                            L'identifiant interne de serveur est un numéro vous permettant de retrouver vos fichiers de serveurs au sein de votre machine.
+                        </small>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleFormControlSelect2">Nombre maximum de joueurs.</label>
                         <input type="number" class="form-control" min="1" max="7777777" name="joueursmax" value="<?php echo"$joueursmax"; ?>">
                     </div>
