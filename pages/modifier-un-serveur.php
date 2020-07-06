@@ -134,11 +134,11 @@
                 <form action="../actions/modifier.php" method="post">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nom du serveur</label>
-                        <input class="form-control form-control-lg" type="text" name="nomserveur" value="<?php echo"$nom"; ?>" required>
+                        <input class="form-control form-control-lg" type="text" value="<?php echo"$nom"; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Identifiant interne</label>
-                        <input class="form-control" id="disabledInput" type="text" name="id" placeholder="<?php echo"$id"; ?>" disabled>
+                        <input class="form-control" id="disabledInput" type="text placeholder="<?php echo"$id"; ?>" disabled>
                         <small class="form-text text-muted">
                             L'identifiant interne de serveur est un numéro vous permettant de retrouver vos fichiers de serveurs au sein de votre machine.
                         </small>
