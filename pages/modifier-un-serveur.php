@@ -138,7 +138,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Nombre maximum de joueurs.</label>
-                        <input type="number" class="form-control" name="count" min="1" max="7777777" name="joueursmax" value="<?php echo"$joueursmax"; ?>">
+                        <input type="number" class="form-control" min="1" max="7777777" name="joueursmax" value="<?php echo"$joueursmax"; ?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry.</label>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Niveau de permitions des opérateurs (OP).</label>
-                        <input type="number" class="form-control" name="count" min="1" max="4" name="opperms" value="<?php echo"$oppermissionlevel"; ?>">
+                        <input type="number" class="form-control" min="1" max="4" name="opperms" value="<?php echo"$oppermissionlevel"; ?>">
                         <small class="form-text text-muted">
                             Cette option détermine les autorisations pour les membres OP (Opérateurs) du serveur. 1 = Les membres OP peuvent passer outre les restrictions de protections du spawn du serveur. 2 = Les membres OP peuvent utiliser toutes les commandes de triche sur le serveur & utiliser des commandes blocs. 3 = Les membres OP peuvent utiliser les commandes d'administration (/ban ; /op ; etc). 4 = Les membres OP peuvent utiliser toutes les commandes disponibles sur le serveur ainsi que celles permetant de sauvegarder le serveur et de l'arrêter (/save-all ; /stop).
                         </small>
@@ -232,7 +232,7 @@
                     </div>  
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">SEED de la carte</label>
-                        <input type="number" class="form-control" name="count" min="0" max="18446744073709551616" value="<?php echo"$levelseed"; ?>">
+                        <input type="number" class="form-control" name="seed" min="0" max="18446744073709551616" value="<?php echo"$levelseed"; ?>">
                         <small class="form-text text-muted">
                             Cette option te prermetra de gérer la façon dont est créée ta map ! Attention, vous avez besoin de recréer une map pour que vos modifications ici soient priées en compte dans le jeu.
                         </small>
@@ -248,7 +248,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Mode de jeu (Game Mode)</label>
-                        <input type="number" class="form-control" name="count" min="0" max="3" value="<?php echo"$gamemode"; ?>">
+                        <input type="number" class="form-control" name="gamemode" min="0" max="3" value="<?php echo"$gamemode"; ?>">
                         <small class="form-text text-muted">
                             Cette option définit le mode de jeu que le serveur utilisera si vous activez l'option force gamemode. Attention, si vous n'avez pas activé le force gamemode, vous ne verrez aucun changement.g
                         </small>
@@ -262,14 +262,14 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Hauteur de construction maximale</label>
-                        <input type="number" class="form-control" name="count" min="0" max="99999999999" value="<?php echo"$maxbuildheight"; ?>">
+                        <input type="number" class="form-control" name="maxbuildheight" min="0" max="99999999999" value="<?php echo"$maxbuildheight"; ?>">
                         <small class="form-text text-muted">
                             Hauteur maximale de construction.
                         </small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Vilageois activés</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="spawnnpcs">
                             <?php echo ouiounon($spawnnpcs); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -278,7 +278,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Liste blanche (White List)</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="whitelist">
                             <?php echo ouiounon($whitelist); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -287,7 +287,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Animaux activés</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="spawnanimals">
                             <?php echo ouiounon($spawnanimals); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -296,7 +296,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Mode Hardcore activé</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="hardcore">
                             <?php echo ouiounon($hardcore); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -305,7 +305,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Mode indiscret activé (Snooper)</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="snooper">
                             <?php echo ouiounon($snooperenabled); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -314,7 +314,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Joueurs "Légaux" seulement ?</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="online">
                             <?php echo ouiounon($onlinemode); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -323,7 +323,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">PVP Activé ?</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="pvp">
                             <?php echo ouiounon($pvp); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -332,7 +332,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Commands blocks</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="commandblock">
                             <?php echo ouiounon($enablecommandblock); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -341,21 +341,21 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Difficulté de jeu</label>
-                        <input type="number" class="form-control" name="count" min="0" max="3" value="<?php echo"$difficulty"; ?>">
+                        <input type="number" class="form-control" name="difficulty" min="0" max="3" value="<?php echo"$difficulty"; ?>">
                         <small class="form-text text-muted">
                             Cette option définit la difficulté de jeu sur le serveur. 0 : Paisible. 1 : Facile. 2 : Normale. 3 : Difficile.                     
                         </small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Temps d'inactivité autorisé</label>
-                        <input type="number" class="form-control" name="count" min="0" max="777" value="<?php echo"$playeridletimeout"; ?>">
+                        <input type="number" class="form-control" name="playeridletimeout" min="0" max="777" value="<?php echo"$playeridletimeout"; ?>">
                         <small class="form-text text-muted">
                             Cette option définit le temps (en minute) d'inactivités autorisées. Note : 0 désactive simplement l'option.        
                         </small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Monstres Activés</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="monstres">
                             <?php echo ouiounon($spawnmonsters); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -364,14 +364,14 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Distance d'affichage</label>
-                        <input type="number" class="form-control" name="count" min="3" max="15" value="<?php echo"$viewdistance"; ?>">
+                        <input type="number" class="form-control" name="viewdistance" min="3" max="15" value="<?php echo"$viewdistance"; ?>">
                         <small class="form-text text-muted">
                             Nombre de chunks ENVOYEES par le serveur. Important : cette valeur ne doit être utilisée qu'en cas de lags importants elle sera donc réduite.  
                         </small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">MOTD</label>
-                        <input class="form-control form-control-lg" type="text" value="<?php echo"$motd"; ?>" required>
+                        <input class="form-control form-control-lg" type="text" value="<?php echo"$motd"; ?>" name="motd" required>
                     </div>
                     <button type="submit" class="btn btn-primary mb-2 boutonenvoie" value="ok">Sauvegarder</button>
                 </form>
