@@ -86,7 +86,7 @@
                 echo "
                 <div class='card' style='width: 18rem;'>
                 <div class='card-body'>
-                    <h5 class='card-title'>Serveur :<br>$ligne->nom</h5>
+                    <h5 class='card-title'>$ligne->nom</h5>
                     <p class='card-text'>État du serveur : $etatduserveur</p>
                 </div>
                 <ul class='list-group list-group-flush'>
