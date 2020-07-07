@@ -77,8 +77,6 @@
         joueursmax :$joueursmax <br>
         oppermissionlevel :$oppermissionlevel <br>
         allownether :$allownether <br>
-        allownether :$allownether <br>
-        allownether :$allownether <br>
         levelname :$levelname <br>
         allowflight :$allowflight <br>
         announceplayerachievements :$announceplayerachievements <br>
