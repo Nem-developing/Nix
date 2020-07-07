@@ -131,7 +131,7 @@
 
 
                 <!-- Formulaire de modification d'un serveur-->
-                <form action="../actions/modifier.php?id=$id" method="post">
+                <form action="../actions/modifier.php" method="post">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nom du serveur</label>
                         <input class="form-control form-control-lg" type="text" name="nom" value="<?php echo"$nom"; ?>" required>
