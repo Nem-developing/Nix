@@ -41,6 +41,71 @@
         include "../config/config.php"; // Import des données de connexion.
         $id = $_GET['id'];
         
+        $nom = $_POST['nom'];          // On récupère les informations du formulaire précédent.
+        $joueursmax = $_POST['joueursmax'];          // On récupère les informations du formulaire précédent.
+        $oppermissionlevel = $_POST['oppermissionlevel'];            // On récupère les informations du formulaire précédent.
+        $allownether = $_POST['allownether'];            // On récupère les informations du formulaire précédent.
+        $levelname = $_POST['levelname'];            // On récupère les informations du formulaire précédent.
+        $allowflight = $_POST['allowflight'];            // On récupère les informations du formulaire précédent.
+        $announceplayerachievements = $_POST['announceplayerachievements'];          // On récupère les informations du formulaire précédent.
+        $leveltype = $_POST['leveltype'];            // On récupère les informations du formulaire précédent.
+        $levelseed = $_POST['levelseed'];            // On récupère les informations du formulaire précédent.
+        $forcegamemode = $_POST['forcegamemode'];            // On récupère les informations du formulaire précédent.
+        $serverip = $_POST['serverip'];          // On récupère les informations du formulaire précédent.
+        $maxbuildheight = $_POST['maxbuildheight'];          // On récupère les informations du formulaire précédent.
+        $spawnnpcs = $_POST['spawnnpcs'];            // On récupère les informations du formulaire précédent.
+        $whitelist = $_POST['whitelist'];            // On récupère les informations du formulaire précédent.
+        $spawnanimals = $_POST['spawnanimals'];          // On récupère les informations du formulaire précédent.
+        $hardcore = $_POST['hardcore'];          // On récupère les informations du formulaire précédent.
+        $snooperenabled = $_POST['snooperenabled'];          // On récupère les informations du formulaire précédent.
+        $onlinemode = $_POST['onlinemode'];          // On récupère les informations du formulaire précédent.
+        $resourcepack = $_POST['resourcepack'];          // On récupère les informations du formulaire précédent.
+        $pvp = $_POST['pvp'];            // On récupère; les informations du formulaire précédent.
+        $difficulty = $_POST['difficulty'];          // On récupère les informations du formulaire précédent.
+        $enablecommandblock = $_POST['enablecommandblock'];          // On récupère les informations du formulaire précédent.
+        $gamemode = $_POST['gamemode'];          // On récupère les informations du formulaire précédent.
+        $playeridletimeout = $_POST['playeridletimeout'];            // On récupère les informations du formulaire précédent.
+        $spawnmonsters = $_POST['spawnmonsters'];            // On récupère les informations du formulaire précédent.
+        $generatestructures = $_POST['generatestructures'];          // On récupère les informations du formulaire précédent.
+        $viewdistance = $_POST['viewdistance'];          // On récupère les informations du formulaire précédent.
+        $motd = $_POST['motd'];          // On récupère; les informations du formulaire précédent.
+        
+        
+        // Vérifications de la récupérations des informations du formulaire précédent.
+        echo "
+        nom :$nom <br> 
+        joueursmax :$joueursmax <br>
+        oppermissionlevel :$oppermissionlevel <br>
+        allownether :$allownether <br>
+        allownether :$allownether <br>
+        allownether :$allownether <br>
+        levelname :$levelname <br>
+        allowflight :$allowflight <br>
+        announceplayerachievements :$announceplayerachievements <br>
+        leveltype :$leveltype <br>
+        levelseed :$levelseed <br>
+        forcegamemode :$forcegamemode <br>
+        serverip :$serverip <br>
+        maxbuildheight :$maxbuildheight <br>
+        spawnnpcs :$spawnnpcs <br>
+        whitelist :$whitelist <br>
+        spawnanimals :$spawnanimals <br>
+        hardcore :$hardcore <br>
+        snooperenabled :$snooperenabled <br>
+        onlinemode :$onlinemode <br>
+        resourcepack :$resourcepack <br>
+        pvp :$pvp <br>
+        difficulty :$difficulty <br>
+        enablecommandblock :$enablecommandblock <br>
+        gamemode :$gamemode <br>
+        playeridletimeout :$playeridletimeout <br>
+        spawnmonsters :$spawnmonsters <br>
+        generatestructures :$generatestructures <br>
+        viewdistance :$viewdistance <br>
+        motd :$motd <br>";
+        
+        
+        
         // Si un utilisateur tente d'accéder à cette page sans passer par les boutons adaptés, alors on va l'éjecter pour ne pas qu'il
         // y ait un soucis lors des requettes.
         if (!$_GET['id']){
@@ -58,20 +123,10 @@
         }
         
         
-        // Récupération des informations du serveur dans les tables de données.
-        // Établissement de la connexion au serveur mysql.
-        $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
-        // Commande SQL permetant de récupérer la liste des serveurs actifs.
-        $req = 'SELECT * FROM serveurs where id = "'.$id.'"';
-        echo "$req";
-        // Envoie au serveur la commande via le biais des informations de connexion.
-        $res = $cnx->query($req);
-
-        // Boucle tant qu'il y a de lignes corespondantes à la requettes
-        while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
-            echo "$ligne->id";
-            
-        }
+        
+        
+        
+        
         
         ?>
         
