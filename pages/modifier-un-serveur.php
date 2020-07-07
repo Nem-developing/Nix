@@ -134,7 +134,7 @@
                 <form action="../actions/modifier.php?id=$id" method="post">
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nom du serveur</label>
-                        <input class="form-control form-control-lg" type="text" value="<?php echo"$nom"; ?>" required>
+                        <input class="form-control form-control-lg" type="text" name="nom" value="<?php echo"$nom"; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Identifiant interne</label>
@@ -156,7 +156,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Niveau de permitions des opérateurs (OP).</label>
-                        <input type="number" class="form-control" min="1" max="4" name="opperms" value="<?php echo"$oppermissionlevel"; ?>">
+                        <input type="number" class="form-control" min="1" max="4" name="oppermissionlevel" value="<?php echo"$oppermissionlevel"; ?>">
                         <small class="form-text text-muted">
                             Cette option détermine les autorisations pour les membres OP (Opérateurs) du serveur. 1 = Les membres OP peuvent passer outre les restrictions de protections du spawn du serveur. 2 = Les membres OP peuvent utiliser toutes les commandes de triche sur le serveur & utiliser des commandes blocs. 3 = Les membres OP peuvent utiliser les commandes d'administration (/ban ; /op ; etc). 4 = Les membres OP peuvent utiliser toutes les commandes disponibles sur le serveur ainsi que celles permetant de sauvegarder le serveur et de l'arrêter (/save-all ; /stop).
                         </small>
@@ -169,20 +169,20 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Nom de la carte du monde.</label>
-                        <input class="form-control form-control-lg" type="text" name="nommap" value="<?php echo"$levelname"; ?>" required>
+                        <input class="form-control form-control-lg" type="text" name="levelname" value="<?php echo"$levelname"; ?>" required>
                         <small class="form-text text-muted">
                             Atention, si vous modifiez cette option, la carte sera régénérée !!
                         </small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Vol Autorisé (Fly)</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="allowflight">
                             <?php echo ouiounon($allowflight); ?>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Diffusion des succès (Achivements)</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="announceplayerachievements">
                             <?php echo ouiounon($announceplayerachievements); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -191,7 +191,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Type de carte</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="leveltype">
                             <?php
                             switch ($leveltype) {
                                 case "default": {
@@ -239,14 +239,14 @@
                     </div>  
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">SEED de la carte</label>
-                        <input type="number" class="form-control" name="seed" min="0" max="18446744073709551616" value="<?php echo"$levelseed"; ?>">
+                        <input type="number" class="form-control" name="levelseed" min="0" max="18446744073709551616" value="<?php echo"$levelseed"; ?>">
                         <small class="form-text text-muted">
                             Cette option te prermetra de gérer la façon dont est créée ta map ! Attention, vous avez besoin de recréer une map pour que vos modifications ici soient priées en compte dans le jeu.
                         </small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Forcer le mode de jeu (Force Game Mode)</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="forcegamemode">
                             <?php echo ouiounon($forcegamemode); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -262,7 +262,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">IP du serveur</label>
-                        <input class="form-control form-control-lg" type="text" value="<?php echo"$serverip"; ?>">
+                        <input class="form-control form-control-lg" type="text" name="serverip" value="<?php echo"$serverip"; ?>">
                         <small class="form-text text-muted">
                             Cette option vous permez de définir l'adresse IP de votre serveur. Il est consseilé de laisser ce champ vide.
                         </small>
@@ -312,7 +312,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Mode indiscret activé (Snooper)</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="snooper">
+                        <select class="form-control" id="exampleFormControlSelect1" name="snooperenabled">
                             <?php echo ouiounon($snooperenabled); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -321,7 +321,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Joueurs "Légaux" seulement ?</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="online">
+                        <select class="form-control" id="exampleFormControlSelect1" name="onlinemode">
                             <?php echo ouiounon($onlinemode); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -339,7 +339,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Commands blocks</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="commandblock">
+                        <select class="form-control" id="exampleFormControlSelect1" name="enablecommandblock">
                             <?php echo ouiounon($enablecommandblock); ?>
                         </select>
                         <small class="form-text text-muted">
@@ -362,7 +362,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Monstres Activés</label>
-                        <select class="form-control" id="exampleFormControlSelect1" name="monstres">
+                        <select class="form-control" id="exampleFormControlSelect1" name="spawnmonsters">
                             <?php echo ouiounon($spawnmonsters); ?>
                         </select>
                         <small class="form-text text-muted">
