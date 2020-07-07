@@ -39,8 +39,7 @@
 
         <?php
         include "../config/config.php"; // Import des données de connexion.
-        $id = $_GET['id'];
-        
+        $id = $_POST['id'];          // On récupère les informations du formulaire précédent.
         $nom = $_POST['nom'];          // On récupère les informations du formulaire précédent.
         $joueursmax = $_POST['joueursmax'];          // On récupère les informations du formulaire précédent.
         $oppermissionlevel = $_POST['oppermissionlevel'];            // On récupère les informations du formulaire précédent.
@@ -106,7 +105,7 @@
         
         // Si un utilisateur tente d'accéder à cette page sans passer par les boutons adaptés, alors on va l'éjecter pour ne pas qu'il
         // y ait un soucis lors des requettes.
-        if (!$_GET['id']){
+        if (!$_POST['id']){
             echo 'Erreur, vous de devez pas être là !';
             header('Location: ../index.php');   // redireciton vers la page d'acceuil.
             exit();
