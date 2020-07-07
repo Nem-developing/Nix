@@ -132,6 +132,30 @@
             }
             return;
         }
+            
+            
+        ////////////////////////////////////////////////////////////////
+        //  Envoie des différentes valeurs dans les bases de données  //
+        ////////////////////////////////////////////////////////////////
+        
+        
+        include "../config/config.php"; // Import des données de connexion.
+        
+        //  Connexion à la base de donnée.
+        
+        $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");    
+        
+        $requette = "UPDATE `serveurs` SET `nom` = '$nom' WHERE `id` = '$id';";
+        echo "$requette";
+        
+        
+         // Changement du nom du serveur.
+        if (!$mysqli->query("$requette")) { 
+            echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+            $erreur = $erreur + 1;
+        }
+            
+            
         ?>
         
         </div>
