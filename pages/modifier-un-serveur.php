@@ -370,6 +370,15 @@
                         </small>
                     </div>
                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Structures Activées</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="generatestructures">
+                            <?php echo ouiounon($generatestructures); ?>
+                        </select>
+                        <small class="form-text text-muted">
+                             Si désactivé, aucune structure n'apparaîtra (Villages, Stronghold, etc.). 
+                        </small>
+                    </div>                                       
+                    <div class="form-group">
                         <label for="exampleFormControlSelect1">Distance d'affichage</label>
                         <input type="number" class="form-control" name="viewdistance" min="3" max="15" value="<?php echo"$viewdistance"; ?>">
                         <small class="form-text text-muted">
