@@ -122,10 +122,17 @@
         
         
         
-        
-        
-        
-        
+        // Fonction "True or False" qui convertie les valeurs booléénes du formulaires en anglais.
+        function ToF($variable) {
+            if ($variable == "Oui") {
+                echo "true";
+            } else if($variable == "Non") {
+                echo "false";
+            } else {
+                echo "Erreur !";
+            }
+            return;
+        }
         ?>
         
         </div>
