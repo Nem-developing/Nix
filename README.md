@@ -1,3 +1,3 @@
-# minecraft-web-srv
+# Nix
 
 > Projet ambitieux !

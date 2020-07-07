@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Lancer & Stopper - Nix</title>
     </head>
     <body>
         <?php
@@ -19,7 +19,7 @@
             case "lancer":
                 echo "Démmarage du serveur";
                 
-                shell_exec("cd /home/mwsrv-user/$id ; sh start_avec_screen.sh");
+                shell_exec("cd /home/nix-user/$id ; sh start_avec_screen.sh");
                 sleep(5);
                 header('Location: ../index.php');
                 exit();

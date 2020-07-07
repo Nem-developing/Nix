@@ -6,13 +6,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link href="css/nouveau.css" rel="stylesheet" type="text/css"/>
-        <title>Création d'un nouveau serveur !</title>
+        <title>Création d'un nouveau serveur - Nix</title>
     </head>
     <body>
 
         <!-- Menu -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Minecraft Web Srv</a>
+            <a class="navbar-brand" href="#">Nix</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,7 +32,7 @@
                         <a class="nav-link" href="#">À propos</a>
                     </li>
                 </ul>
-                <a class="version" href="https://github.com/nem-developing/">MW-SRV 1.0 - Nem-Developing</a>
+                <a class="version" href="https://github.com/nem-developing/">Nix 1.0 - Nem-Developing</a>
             </div>
         </nav>  
 
@@ -180,48 +180,48 @@
                 
             }
             // Changement de répertoire.
-            chdir("/home/mwsrv-user/");
+            chdir("/home/nix-user/");
             
             // Création d'un dossier corespondant à l'id du serveur.
             mkdir("$idserveur", 0700);
             
             // Téléchargement du fichier server.jar.
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ;wget $liendownload");
+            $s = shell_exec("cd /home/nix-user/$idserveur ;wget $liendownload");
             echo "$s";
 
             // Premier lancement du serveurs.
-            shell_exec("cd /home/mwsrv-user/$idserveur ; java -jar server.jar");
+            shell_exec("cd /home/nix-user/$idserveur ; java -jar server.jar");
             
             // Activation du EULA.
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; sed -i 's/false/true/g' eula.txt");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; sed -i 's/false/true/g' eula.txt");
             echo "$s";
 
             // Création du fichier de lancement du serveur.
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'java $commandedelancement -jar server.jar nogui' > start.sh");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo 'java $commandedelancement -jar server.jar nogui' > start.sh");
             echo "$s";
 
             // Création de l'insertion du serveur dans un Screen.
-      		$s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo 'screen -AmdS serveur_$idserveur ./start.sh' > start_avec_screen.sh");
+      		$s = shell_exec("cd /home/nix-user/$idserveur ; echo 'screen -AmdS serveur_$idserveur ./start.sh' > start_avec_screen.sh");
             echo "$s";
 
             // Définition des deux fichier de lancement comme des fichier éxecutables. 
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; chmod +x start.sh ; chmod +x start_avec_screen.sh ");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; chmod +x start.sh ; chmod +x start_avec_screen.sh ");
             echo "$s";
             
             // Ajout des paramètres dans server.properties. 
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo server-port=$port > server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo server-port=$port > server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo query.port=$querry >> server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo query.port=$querry >> server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo enable-rcon=true >> server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo enable-rcon=true >> server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo rcon.port=$rcon >> server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo rcon.port=$rcon >> server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo rcon.password=$pass >> server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo rcon.password=$pass >> server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo max-players=$joueursmax >> server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo max-players=$joueursmax >> server.properties");
             echo "$s";
-            $s = shell_exec("cd /home/mwsrv-user/$idserveur ; echo motd=Serveur $namesrv via MW-SRV ! >> server.properties");
+            $s = shell_exec("cd /home/nix-user/$idserveur ; echo motd=Serveur $namesrv via MW-SRV ! >> server.properties");
             echo "$s";
             
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

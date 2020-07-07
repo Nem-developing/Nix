@@ -11,7 +11,7 @@
 
         <!-- Menu -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Minecraft Web Srv</a>
+            <a class="navbar-brand" href="../index.php">Nix</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,7 +31,7 @@
                         <a class="nav-link" href="#">À propos</a>
                     </li>
                 </ul>
-                <a class="version" href="https://github.com/nem-developing/">MW-SRV 1.0 - Nem-Developing</a>
+                <a class="version" href="https://github.com/nem-developing/">Nix 1.0 - Nem-Developing</a>
             </div>
         </nav>  
 
