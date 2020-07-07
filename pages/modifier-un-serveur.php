@@ -163,7 +163,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Nether Autorisé</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" id="exampleFormControlSelect1" name="allownether">
                             <?php echo ouiounon($allownether); ?>
                         </select>
                     </div>
