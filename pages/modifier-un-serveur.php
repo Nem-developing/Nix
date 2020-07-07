@@ -138,17 +138,17 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Identifiant interne</label>
-                        <input class="form-control" id="disabledInput" type="text placeholder="<?php echo"$id"; ?>" disabled>
+                        <input type="number" class="form-control" min="<?php echo"$id"; ?>" max="<?php echo"$id"; ?>" name="id" value="<?php echo"$id"; ?>">
                         <small class="form-text text-muted">
                             L'identifiant interne de serveur est un numéro vous permettant de retrouver vos fichiers de serveurs au sein de votre machine.
                         </small>
-                    </div>
+                    </div>                                       
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2">Nombre maximum de joueurs.</label>
+                        <label for="exampleFormControlSelect2">Nombre maximum de joueurs</label>
                         <input type="number" class="form-control" min="1" max="7777777" name="joueursmax" value="<?php echo"$joueursmax"; ?>">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry.</label>
+                        <label for="exampleFormControlSelect2"> Numéro du port pour JQuerry</label>
                         <input class="form-control" id="disabledInput" type="text" placeholder="<?php echo"$querryport"; ?>" disabled>
                         <small class="form-text text-muted">
                             Vous n'avez pas accès à cette option. Elle n'est présente qu'à titre indicatif.
