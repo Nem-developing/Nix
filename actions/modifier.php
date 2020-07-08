@@ -145,6 +145,7 @@
         
         $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");    
         
+        // Commande SQL.
         $requette = "UPDATE `serveurs` SET `nom` = '$nom' WHERE `id` = '$id';";
         echo "$requette";
         
@@ -155,7 +156,18 @@
             $erreur = $erreur + 1;
         }
             
-            
+        
+        // Commande SQL ajoutant les nouvelles options dans la base de donnée.
+        $requette = "UPDATE `server.properties` SET `id` = '$id', `oppermissionlevel` = '$oppermissionlevel', `allownether` = '$allownether', `levelname` = '$levelname', `enablequery` = 'true', `allowflight` = '$allowflight', `announceplayerachievements` = '$announceplayerachievements', `leveltype` = '$leveltype', `levelseed` = '$levelseed', `forcegamemode` = '$forcegamemode', `serverip` = '$serverip', `maxbuildheight` = '$maxbuildheight', `spawnnpcs` = '$spawnnpcs', `whitelist` = '$whitelist', `spawnanimals` = '$spawnanimals', `hardcore` = '$hardcore', `snooperenabled` = '$snooperenabled', `onlinemode` = '$onlinemode', `resourcepack` = '$resourcepack', `pvp` = '$pvp', `difficulty` = '$difficulty', `enablecommandblock` = '$enablecommandblock', `gamemode` = '$gamemode', `playeridletimeout` = '$playeridletimeout', `maxplayers` = '$joueursmax', `spawnmonsters` = '$spawnmonsters', `generatestructures` = '$generatestructures', `viewdistance` = '$viewdistance', `motd` = '$motd' WHERE `id` = '$id';";
+        echo "$requette";
+        
+        
+         // Envoie de cette commande dans mysql.
+        if (!$mysqli->query("$requette")) { 
+            echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
+            $erreur = $erreur + 1;
+        }
+        
         ?>
         
         </div>
