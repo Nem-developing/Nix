@@ -70,37 +70,42 @@
         $motd = $_POST['motd'];          // On récupère; les informations du formulaire précédent.
         
         
-        // Vérifications de la récupérations des informations du formulaire précédent.
-        echo "
-        nom :$nom <br> 
-        joueursmax :$joueursmax <br>
-        oppermissionlevel :$oppermissionlevel <br>
-        allownether :$allownether <br>
-        levelname :$levelname <br>
-        allowflight :$allowflight <br>
-        announceplayerachievements :$announceplayerachievements <br>
-        leveltype :$leveltype <br>
-        levelseed :$levelseed <br>
-        forcegamemode :$forcegamemode <br>
-        serverip :$serverip <br>
-        maxbuildheight :$maxbuildheight <br>
-        spawnnpcs :$spawnnpcs <br>
-        whitelist :$whitelist <br>
-        spawnanimals :$spawnanimals <br>
-        hardcore :$hardcore <br>
-        snooperenabled :$snooperenabled <br>
-        onlinemode :$onlinemode <br>
-        resourcepack :$resourcepack <br>
-        pvp :$pvp <br>
-        difficulty :$difficulty <br>
-        enablecommandblock :$enablecommandblock <br>
-        gamemode :$gamemode <br>
-        playeridletimeout :$playeridletimeout <br>
-        spawnmonsters :$spawnmonsters <br>
-        generatestructures :$generatestructures <br>
-        viewdistance :$viewdistance <br>
-        motd :$motd <br>";
+        // On défini la valeur par défaut de la varialbe d'erreurs
+        $erreur = 0;
         
+        // Fonction "True ou False" qui convertie les valeurs booléénes du formulaires en anglais.
+        function ToF($variable) {
+            if ($variable == "Oui") {
+                return "true";
+            } else if($variable == "Non") {
+                return "false";
+            } else {
+                return "Erreur !";
+            }
+            return;
+        }
+        
+        
+        
+        // Changement des valeurs françaises vers anglaises.
+        // On transforme nos variable initiale en variable modifiées (Reconnaissable en "$mavariableOK")
+        
+        
+        $allownetherOK = ToF($allownether);
+        $allowflightOK = ToF($allowflight);
+        $announceplayerachievementsOK = ToF($announceplayerachievements);
+        $forcegamemodeOK = ToF($forcegamemode);
+        $spawnnpcsOK = ToF($spawnnpcs);
+        $whitelistOK = ToF($whitelist);
+        $spawnanimalsOK = ToF($spawnanimals);
+        $hardcoreOK = ToF($hardcore);
+        $snooperenabledOK = ToF($snooperenabled);
+        $onlinemodeOK = ToF($onlinemode);
+        $pvpOK = ToF($pvp);
+        $enablecommandblockOK = ToF($enablecommandblock);
+        $spawnmonstersOK = ToF($spawnmonsters);
+        $generatestructuresOK = ToF($generatestructures);
+        $mavariableOK = ToF($mavariable);
         
         
         // Si un utilisateur tente d'accéder à cette page sans passer par les boutons adaptés, alors on va l'éjecter pour ne pas qu'il
@@ -118,20 +123,6 @@
             echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
             $erreur = $erreur + 1;
         }
-        
-        
-        
-        // Fonction "True or False" qui convertie les valeurs booléénes du formulaires en anglais.
-        function ToF($variable) {
-            if ($variable == "Oui") {
-                echo "true";
-            } else if($variable == "Non") {
-                echo "false";
-            } else {
-                echo "Erreur !";
-            }
-            return;
-        }
             
             
         ////////////////////////////////////////////////////////////////
@@ -145,12 +136,11 @@
         
         $mysqli = new mysqli("$hotedeconnexion", "$utilisateur", "$motdepasse", "$basededonnee");    
         
-        // Commande SQL.
-        $requette = "UPDATE `serveurs` SET `nom` = '$nom' WHERE `id` = '$id';";
-        echo "$requette";
+        // Commande SQL permmetant la modifiaction de la table "SEVEURS".
+        $requette = "UPDATE `serveurs` SET `nom` = '$nom', `joueursmax` = '$joueursmax' WHERE `id` = '$id';";
         
+        // Envoie de cette commande dans mysql.
         
-         // Changement du nom du serveur.
         if (!$mysqli->query("$requette")) { 
             echo "<div class='alert alert-danger' role='alert'> Erreur N°$mysqli->errno : $mysqli->error.</div>";    // Affichage de l'erreur.
             $erreur = $erreur + 1;
@@ -158,8 +148,7 @@
             
         
         // Commande SQL ajoutant les nouvelles options dans la base de donnée.
-        $requette = "UPDATE `server.properties` SET `id` = '$id', `oppermissionlevel` = '$oppermissionlevel', `allownether` = '$allownether', `levelname` = '$levelname', `allowflight` = '$allowflight', `announceplayerachievements` = '$announceplayerachievements', `leveltype` = '$leveltype', `levelseed` = '$levelseed', `forcegamemode` = '$forcegamemode', `serverip` = '$serverip', `maxbuildheight` = '$maxbuildheight', `spawnnpcs` = '$spawnnpcs', `whitelist` = '$whitelist', `spawnanimals` = '$spawnanimals', `hardcore` = '$hardcore', `snooperenabled` = '$snooperenabled', `onlinemode` = '$onlinemode', `resourcepack` = '$resourcepack', `pvp` = '$pvp', `difficulty` = '$difficulty', `enablecommandblock` = '$enablecommandblock', `gamemode` = '$gamemode', `playeridletimeout` = '$playeridletimeout', `maxplayers` = '$joueursmax', `spawnmonsters` = '$spawnmonsters', `generatestructures` = '$generatestructures', `viewdistance` = '$viewdistance', `motd` = '$motd' WHERE `id` = '$id';";
-        echo "$requette";
+        $requette = "UPDATE `server.properties` SET `id` = '$id', `oppermissionlevel` = '$oppermissionlevel', `allownether` = '$allownetherOK', `levelname` = '$levelname', `allowflight` = '$allowflightOK', `announceplayerachievements` = '$announceplayerachievementsOK', `leveltype` = '$leveltype', `levelseed` = '$levelseed', `forcegamemode` = '$forcegamemodeOK', `serverip` = '$serverip', `maxbuildheight` = '$maxbuildheight', `spawnnpcs` = '$spawnnpcsOK', `whitelist` = '$whitelistOK', `spawnanimals` = '$spawnanimalsOK', `hardcore` = '$hardcoreOK', `snooperenabled` = '$snooperenabledOK', `onlinemode` = '$onlinemodeOK', `resourcepack` = '$resourcepack', `pvp` = '$pvpOK', `difficulty` = '$difficulty', `enablecommandblock` = '$enablecommandblockOK', `gamemode` = '$gamemode', `playeridletimeout` = '$playeridletimeout', `maxplayers` = '$joueursmax', `spawnmonsters` = '$spawnmonstersOK', `generatestructures` = '$generatestructuresOK', `viewdistance` = '$viewdistance', `motd` = '$motd' WHERE `id` = '$id';";
         
         
          // Envoie de cette commande dans mysql.
@@ -168,6 +157,13 @@
             $erreur = $erreur + 1;
         }
         
+        if ($erreur === 0) {    // test de la présence d'erreurs ou non.
+                header('Location: ../index.php');   // On redirige automatiquement vers la page d'accueil si il n'y a pas d'erreur
+                exit();
+            } else {    // Sinon on affiche qu'il y a une erreur et là, on reste sur la page.
+                echo "<h1>Il semble y avoir une erreur, veuillez vous référer à l'alerte au dessus !</h1>";
+            }
+       
         ?>
         
         </div>
