@@ -157,6 +157,55 @@
             $erreur = $erreur + 1;
         }
         
+        
+        // Nous changeons seulement le fichier server.properties si et seulement si il n'y a toujours pas d'érreur.
+        if ($erreur === 0){
+
+
+            // On récupe quelques informations dans la base de donnée. //
+            
+        
+            // Établissement de la connexion au serveur mysql.
+            $cnx = new PDO("mysql:host=$hotedeconnexion;dbname=$basededonnee", "$utilisateur", "$motdepasse");
+            // Commande SQL permetant de récupérer la liste des serveurs actifs.
+            $req = 'SELECT * FROM `server.properties` where id = "' . $id . '"';
+            // Envoie au serveur la commande via le biais des informations de connexion.
+            $res = $cnx->query($req);
+
+            
+            
+            // Boucle tant qu'il y a de lignes corespondantes à la requettes
+            while ($ligne = $res->fetch(PDO::FETCH_OBJ)) {
+                $serverport = $ligne->serverport;
+                $querryport = $ligne->queryport;
+                $rconport = $ligne->rconport;
+                $rconpass = $ligne->rconpassword;
+            }
+            
+            // Suppression de l'ancien fichier
+            $s = shell_exec("cd /home/nix-user/$id ; rm server.properties");
+            echo "$s";
+            
+            // Ajout des paramètres dans server.properties. 
+            $s = shell_exec("cd /home/nix-user/$id ; echo server-port=$serverport > server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/nix-user/$id ; echo query.port=$querryport >> server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/nix-user/$id ; echo enable-rcon=true >> server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/nix-user/$id ; echo rcon.port=$rconport >> server.properties");
+            echo "$s";
+            $s = shell_exec("cd /home/nix-user/$id ; echo rcon.password=$rconpass >> server.properties");
+            echo "$s";
+        }
+        
+        
+        
+        
+        
+        
+        
+        
         if ($erreur === 0) {    // test de la présence d'erreurs ou non.
                 header('Location: ../index.php');   // On redirige automatiquement vers la page d'accueil si il n'y a pas d'erreur
                 exit();
