@@ -105,7 +105,6 @@
         $enablecommandblockOK = ToF($enablecommandblock);
         $spawnmonstersOK = ToF($spawnmonsters);
         $generatestructuresOK = ToF($generatestructures);
-        $mavariableOK = ToF($mavariable);
         
         
         // Si un utilisateur tente d'accéder à cette page sans passer par les boutons adaptés, alors on va l'éjecter pour ne pas qu'il
@@ -183,20 +182,47 @@
             }
             
             // Suppression de l'ancien fichier
-            $s = shell_exec("cd /home/nix-user/$id ; rm server.properties");
-            echo "$s";
+            shell_exec("cd /home/nix-user/$id ; rm server.properties");
             
             // Ajout des paramètres dans server.properties. 
-            $s = shell_exec("cd /home/nix-user/$id ; echo server-port=$serverport > server.properties");
-            echo "$s";
-            $s = shell_exec("cd /home/nix-user/$id ; echo query.port=$querryport >> server.properties");
-            echo "$s";
-            $s = shell_exec("cd /home/nix-user/$id ; echo enable-rcon=true >> server.properties");
-            echo "$s";
-            $s = shell_exec("cd /home/nix-user/$id ; echo rcon.port=$rconport >> server.properties");
-            echo "$s";
-            $s = shell_exec("cd /home/nix-user/$id ; echo rcon.password=$rconpass >> server.properties");
-            echo "$s";
+            
+            shell_exec("cd /home/nix-user/$id ; echo op-permission-level=$oppermissionlevel > server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo allow-nether=$allownetherOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo level-name=$levelname >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo enable-query=true >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo allow-flight=$allowflightOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo announce-player-achievements=$announceplayerachievementsOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo rcon.password=$rconpass >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo server-port=$serverport >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo query.port=$querryport >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo level-type=$leveltype >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo enable-rcon=true  >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo level-seed=$levelseed >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo force-gamemode=$forcegamemodeOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo server-ip=$serverip >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo max-build-height=$maxbuildheight >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo spawn-npcs=$spawnnpcsOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo white-list=$whitelistOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo spawn-animals=$spawnanimalsOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo hardcore=$hardcoreOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo snooper-enabled=$snooperenabledOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo online-mode=$onlinemodeOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo resource-pack=$resourcepack >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo pvp=$pvpOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo difficulty=$difficulty >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo enable-command-block=$enablecommandblockOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo gamemode=$gamemode >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo player-idle-timeout=$playeridletimeout >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo max-players=$maxplayers >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo rcon.port=$rconport >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo spawn-monsters=$spawnmonstersOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo view-distance=$viewdistance >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo generate-structures=$generatestructuresOK >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo motd=$motd >> server.properties");
+
+            
+            
+            
         }
         
         
