@@ -185,7 +185,6 @@
             shell_exec("cd /home/nix-user/$id ; rm server.properties");
             
             // Ajout des paramètres dans server.properties. 
-            
             shell_exec("cd /home/nix-user/$id ; echo op-permission-level=$oppermissionlevel > server.properties");
             shell_exec("cd /home/nix-user/$id ; echo allow-nether=$allownetherOK >> server.properties");
             shell_exec("cd /home/nix-user/$id ; echo level-name=$levelname >> server.properties");
@@ -213,7 +212,7 @@
             shell_exec("cd /home/nix-user/$id ; echo enable-command-block=$enablecommandblockOK >> server.properties");
             shell_exec("cd /home/nix-user/$id ; echo gamemode=$gamemode >> server.properties");
             shell_exec("cd /home/nix-user/$id ; echo player-idle-timeout=$playeridletimeout >> server.properties");
-            shell_exec("cd /home/nix-user/$id ; echo max-players=$maxplayers >> server.properties");
+            shell_exec("cd /home/nix-user/$id ; echo max-players=$joueursmax >> server.properties");
             shell_exec("cd /home/nix-user/$id ; echo rcon.port=$rconport >> server.properties");
             shell_exec("cd /home/nix-user/$id ; echo spawn-monsters=$spawnmonstersOK >> server.properties");
             shell_exec("cd /home/nix-user/$id ; echo view-distance=$viewdistance >> server.properties");
